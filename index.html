@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BJJ Training Game</title>
+    
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    
+    <link rel="stylesheet" href="styles.css">
+    
+</head>
+
+<body>
+  <h2>Train!</h2>
+  
+  <div id="wrapper">
+
+      <div class="col">
+          <h3>Current Position: <span id="current_position">Blank</span></h3>
+          <p>Position Modifiers: <span id="current_mods">None</span></p>
+          
+          <!--TODO: feature where you can attempt a move but won't make it-->
+          <!--<p>Attempting Move: <span id="current_move"></span></p>-->
+          
+          <h3>Possible Moves:</h3>
+
+          <div id="moves_list"></div>
+          
+          
+          <h3>Possible Position Modifiers:</h3>
+          
+          <div id="mod_list"></div>
+          
+          <input id="submit" type="button" value="Do It!" onclick="performMove()"/>
+     </div>
+
+      <div class="col">
+         <div id="notes">
+             <h3>NOTES</h3>
+             <p class="note"><b>Position:</b> <span id="positionNote">none</span></p>
+             <p class="note"><b>Move:</b> <span id="moveNote">none</span></p>
+             <p class="note"><b>Image:</b> <span id="imageNote">none</span></p>
+             <!--<p class="note"><b>Videos:</b> <span id="videoNote">none</span></p>-->
+             <p class="note"><b>Videos:</b></p>
+             <div id="videoNote"></div>
+             <div id="linkNote">
+                 <p><b>Links:</b></p>
+             </div>
+         </div>
+      </div>
+      
+ </div> 
+ 
+ <div id="history"><b>History:</b> </div>
+ 
+ <p id="startFromSeated" class="restart">Start a new match on the ground</p>
+ <p id="refresh" class="restart">Start me somewhere random</p>
+ 
+<div id="posDropdown">
+    <select id="posList" onmousedown="this.value='';" onchange="reset(this.value);">
+        <option value="null">Pick a position to start from</option>
+    </select>
+</div>
+ 
+ <div id="cover">
+     <div id="popup">
+         <h3 class="title">Title</h3>
+         <p class="text">Text</p>
+         <button>OK</button>
+     </div>
+ </div>
+ 
+ 
+  
+   
+   <script src="jquery-3.1.1.min.js"></script>
+   <script src="positionList.js"></script>
+   <script src="movesList.js"></script>
+   <script src="modifiers.js"></script>
+   <script src="main.js"></script>
+    
+</body>
+</html>
