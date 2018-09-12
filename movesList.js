@@ -3,7 +3,8 @@ var moves = [
         displayName: "Arm Bar from Mount",
         shortName: "armBarFromMount",
         type: "submission",
-        notes: "Trap arm. Bring opposite leg to one knee. Put weight on that foot and hands completely. Sweep other leg around FAST and SIT DOWN. PINCH knees to their torso hard. Keep their arm tight against chest. Lean back. Thumb up. Lift hips to finish."
+        notes: "Trap arm. Bring opposite leg to one knee. Put weight on that foot and hands completely. Sweep other leg around FAST and SIT DOWN. PINCH knees to their torso hard. Keep their arm tight against chest. Lean back. Thumb up. Lift hips to finish.",
+        defense: ["do the thing"]
     },{
         displayName: "Arm Bar From Guard",
         shortName: "armBarFromGuard",

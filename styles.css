@@ -108,3 +108,39 @@ a, a:visited {
     align-items: center;
 }
 
+#notification {
+    width: 100%;
+    color: #fff;
+    position: fixed;
+    padding: 1em;
+    top: 0;
+    left: 0;
+    background: blueviolet;
+    text-align: center;
+    opacity: 0;
+    display: none;
+}
+
+#notification.bad {
+    background-color: red;
+}
+#notification.good {
+    background-color: green;
+}
+
+#notification p, #notification h3 { margin: 0.3em 0 ;}
+
+@media screen and (max-width: 800px) {
+    
+    #wrapper {
+        flex-wrap: wrap;
+    }
+    
+    .col {
+        margin: 0 0 1em 0;
+        flex: 0 1 100%;
+    }
+    
+    .top_header {margin: 0;}
+    
+}

@@ -131,21 +131,18 @@ function updatePosModList(mod) {
   ------------------------------- */
 function performMove() {
     
-    // TODO cleaner way to do this?
-    /*moves.forEach(function (elem) {
-        if (elem.shortName == selectedMove.shortName) {
-            currentMove = elem;
-            $("#current_move").text(elem.displayName);
-            
-            if (currentMove.type == "positionChange") {
-                updatePosition(positions[elem.next])
-            } else if (currentMove.type == "submission" || currentMove.type == "choke") {
-                // TODO: feature where you can fail submissions
-                endRound("win");
-            }
-        }
-    })*/
-    
+    //TODO: commented out for now until this feature is more useful.
+    // check to see if AI defends move
+    // currently just a 50/50 chance using rand function already in this file
+    /*var chance = getRandomInt(0, 1);
+    if (chance == 1) {
+        console.log("defend"); 
+        showNotification("ALERT", "Your opponent defends!")
+        return
+    } else {
+        console.log("don't defend"); 
+    }*/
+        
     currentMove = selectedMove;
     selectedMove = null;
     
@@ -156,18 +153,33 @@ function performMove() {
 
     if (currentMove.type == "positionChange") {
         updateHistory(currentMove.displayName);
-        updatePosition(positions[currentMove.next])
+        updatePosition(positions[currentMove.next])        
     } else if (currentMove.type == "submission" || currentMove.type == "choke") {
         // TODO: feature where you can fail submissions
         endRound("win");
     } else if (currentMove.type == "modifier") {
-        alert("You did: " + currentMove.displayName)
+        alert("You did: " + currentMove.displayName) // currently unused, handled a different way
     } else {
         console.log("Error");
     }
  
 }
 
+/* -------------------------------
+      OPPONENT PERFORMS MOVE
+  ------------------------------- */
+function opponentPerformMove() {
+    console.log("your opponent is doing a move against you!");
+    
+    // based on current position, get a possible list of moves opponent could do.
+    // note -- have to get the reverse position (like being in top vs bottom side control - need to set up a list of paired positions)
+    // pick a move at random
+    // show the chosen move to the player via popup
+    // also show the possible defenses to the move
+    // player can click the defenses for practice (for now won't actually do anything)
+    // then player can choose to succesfully defend, not defend, or leave it to random chance
+    // clicking each action will either return game to previous state (if move is defended) or advance to next state (position change or tapping, depending on move type)
+}
 
 /* -------------------------------
            END THE ROUND
@@ -197,6 +209,18 @@ $("#popup button").click(function(){
     $("#cover").hide();
 })
 
+/* -------------------------------
+        NOTIFICATION CODE
+  ------------------------------- */
+function showNotification(title, text, className) {
+    $("#notification .title").text(title);
+    $("#notification .text").text(text);
+    
+    // todo: remove existing class and attach new one.
+    
+    TweenMax.to("#notification", 0.25, {opacity:1, display:"block", yoyo: true, repeat: 1, repeatDelay: 2})
+    
+}
 
 /* -------------------------------
         HELPER FUNCTIONS
@@ -205,8 +229,21 @@ function updatePosition(pos) {
     currentPosition = pos;
     $("#current_position").text(pos.displayName);
     $("#positionNote").text(pos.notes);    
-    addMoves()
+    addMoves();
     updateHistory(pos.displayName);
+    
+    // TODO: check here for if AI does a move against you.
+    // bug? -- this happens at start of game
+    var chance = getRandomInt(0, 1);
+    if (chance == 1) {
+        console.log("AI does a move");
+        opponentPerformMove();
+        
+        
+    } else {
+        console.log("AI does not do a move");
+        
+    }
 }
 
 function getRandomPosition() {
