@@ -48,12 +48,18 @@ var positions = {
             validMoves: ["armDrag", "ankleLock", "collarDrag"],
             notes: "opponent is on their knees, your feet are hooked between their legs or thighs" // todo: reverse position
         },
-    haveBack : {
-            shortName: "haveBack",
+    rearMount : {
+            shortName: "rearMount",
             displayName: "Have Opponent's Back",
             validMoves: ["rearNakedChoke", "bowArrowChoke"],
             notes: "your chest is on your opponent's back, you are holding on to them"
         // TODO variations: with hooks, with 1 hook
+        },
+    rearMounted : {
+            shortName: "rearMounted",
+            displayName: "Opponent is on your back",
+            validMoves: [""],
+            notes: "your opponent is on your back"
         },
     bottomSideControl : {
             shortName: "bottomSideControl",
@@ -66,19 +72,38 @@ var positions = {
             displayName: "Knee on Belly",
             validMoves: ["armbarFromKOB"],
             notes: "opponent on back, your knee in their belly/solar plexus"
-        }, 
+        },
     halfGuard : {
             shortName: "halfGuard",
             displayName: "Half Guard (Top)",
             validMoves: [""],
             notes: "You are on your side using your inside leg to hook one of your opponent’s legs and have some sort of underhook with your top arm. There are many minor variations to this position, including having your legs triangled, gripping his gi or his belt, etc"
-        }, 
-    halfGuard : {
+        },
+    halfGuardBottom : {
             shortName: "halfGuardBottom",
             displayName: "Half Guard (Bottom)",
             validMoves: [""],
             notes: "Opponent has his leg(s) hooked around one of yours, possibly some kind of arm control."
         }
+}
+
+
+// Used to determine how your opponent could be positioned, given what you're doing.
+var positionPairs = {
+    mount : ["mounted"],
+    mounted : ["mount"],
+    inGuard : ["inOppGuard"],
+    inOppGuard : ["inGuard"],
+    sideControl : ["bottomSideControl"],
+    bottomSideControl : ["sideControl", "kneeOnBelly"],
+    neutralGround : ["neutralGround", "standing"],
+    standing : ["standing", "neutralGround"],
+    rearMount : ["rearMounted"],
+    rearMounted : ["rearMount"],
+    kneeOnBelly : ["bottomSideControl"],
+    halfGuard : ["halfGuardBottom"],
+    halfGuardBottom : ["halfGuard"],
+    butterfly : ["neutralGround", "standing"]
 }
 
 

@@ -34,7 +34,7 @@ var modifiers = {
     butterfly : [
             
             ],
-    haveBack : [
+    rearMount : [
                 "get hooks in",
                 "strong hand grip"
             ],

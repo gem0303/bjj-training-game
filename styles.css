@@ -1,3 +1,4 @@
+/* Global defaults ----------------------- */
 * {
     xpadding: 0;
     xmargin: 0;
@@ -12,6 +13,8 @@ a, a:visited {
     padding: 5px;
 }
 
+
+/* Main Gameplay Elements ----------------------- */
 #moves_list a {
     display: block;
     transition: color 0.25s, background-color 0.25s;
@@ -25,26 +28,6 @@ a, a:visited {
 #moves_list a.selected {
     color: #02c1fd;
     background-color: #ddd;
-}
-
-#submit {
-    margin-top: 1em;
-    border-radius: 20px;
-    border: 3px solid #24b662;
-    color: #fff;
-    background: #2ECC71;
-    cursor: pointer;
-    padding: 10px 30px;
-    display: inline-block;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-weight: bold;
-    font-size: 1.1em;
-    outline: none;
-}
-
-#submit:hover {
-    background: #24b662;
 }
 
 #wrapper {
@@ -73,17 +56,60 @@ a, a:visited {
 
 #linkNote p {display: inline-block;}
 
+
+#position_wrapper * {margin: 0.3em 0;}
+
+#position_wrapper p:nth-of-type(1) {
+    font-style: italic;
+}
+
+
+/* Submit Button ----------------------- */
+#submit {
+    margin-top: 1em;
+    border-radius: 20px;
+    border: 3px solid #24b662;
+    color: #fff;
+    background: #2ECC71;
+    cursor: pointer;
+    padding: 10px 30px;
+    display: inline-block;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: bold;
+    font-size: 1.1em;
+    outline: none;
+}
+
+#submit:hover {
+    background: #24b662;
+}
+
+
+
 .restart {
     font-style: italic;
     cursor: pointer;
     color: green;
 }
 
+/* Bottom of page ----------------------- */
 #history {
     background-color: #ddf3dd;
     padding: 1em;
 }
 
+#bottom_nav {
+    margin: 1em 0;
+}
+
+#bottom_nav p, #bottom_nav div {
+    display: inline-block;
+    margin: 0px 1em;
+}
+
+
+/* Popup/Notificaion UI elements ----------------------- */
 #cover {
     width: 100vw;
     height: 100vh;
@@ -91,10 +117,10 @@ a, a:visited {
     position: absolute;
     top: 0px;
     left: 0px;
-    display: flex;
     justify-content: center;
     align-items: center;
-    display: none;
+    opacity: 0;
+    display: none; /*display: flex;*/
 }
 
 #popup {
@@ -108,6 +134,8 @@ a, a:visited {
     align-items: center;
 }
 
+
+/* Notification Popup at top of screen ----------------------- */
 #notification {
     width: 100%;
     color: #fff;
@@ -129,6 +157,9 @@ a, a:visited {
 }
 
 #notification p, #notification h3 { margin: 0.3em 0 ;}
+
+
+/* Media Queries ----------------------- */
 
 @media screen and (max-width: 800px) {
     

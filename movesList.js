@@ -28,7 +28,7 @@ var moves = [
         next: "mount",
         notes: "move opponent off balance. deep collar grip, grab sleeve on same side. open guard and make the belt, other leg FLAT on the ground. pull them forward ('check the time'). bring leg out wide and smash it HARD against their legs to complete the sweep. alternate: use both legs in more of a true scissor motion by pulling bottom leg back and pushing top leg forward to topple over your opponent.",
         videoUrl: ["https://www.youtube.com/embed/UBf7uF5x8GQ"]
-        
+
     },{
         displayName: "Pass Guard",
         shortName: "passGuard",
@@ -45,7 +45,7 @@ var moves = [
         displayName: "Arm Drag",
         shortName: "armDrag",
         type: "positionChange",
-        next: "haveBack",
+        next: "rearMount",
         notes: "C grip thumb up on opp wrist. Underhand grip on tricep. Pull diagonally across you. Plant outside foot, hook other over calf. Bring them down to elbow. Hook arm and take back. Arm goes under their armpit and grips opposite hand/wrist. In seatbelt hold."
     },{
         displayName: "Sweep",
@@ -106,14 +106,14 @@ var moves = [
         displayName: "Collar Drag",
         shortName: "collarDrag",
         type: "positionChange",
-        next: "haveBack",
+        next: "rearMount",
         notes: "grip same side of lapel, bring elbow to the mat and post off other hand, scoot to one side and swing up over opponent's back. remember to get in hooks",
         videoUrl: ["https://www.youtube.com/embed/Ahtq9FY3Fws"]
     },{
         displayName: "Arm Drag Takedown",
         shortName: "armDragTakedown",
         type: "positionChange",
-        next: "haveBack", // todo: side control
+        next: "rearMount", // todo: side control
         notes: "mirror stance, outside hand grabs wrist, inside hand cups tricep, pull opponent toward you and circle to take back, your inside foot is hooking around theirs" // todo: what to do if you can't circle far enoough to back
     },{
         displayName: "Standing Guard Break",

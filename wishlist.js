@@ -22,14 +22,17 @@ Options:
 Other things to think about --
 
 % chance that AI will defend a move you do against them
+    -- diff % chances for position changes vs submissions/chokes?
 % chance that AI will do a move against you
 
+-- chance that opponent defends your move, and immediately does their own
 
 
 
 
+-- ability to put together a 'plan' -- aka, perform this sweep, then execute this submission, then if that fails go for something else. at any point the AI will do offense/defense against you (if toggled on)
 
-
+-- ability to mark off moves that you want more practice at. it will output a little list for you to refer to
 
 -- fail submissions
 
