@@ -57,8 +57,8 @@ var positions = {
         },
     rearMounted : {
             shortName: "rearMounted",
-            displayName: "Opponent is on your back",
-            validMoves: [""],
+            displayName: "Opponent has your back",
+            validMoves: ["defendBack"],
             notes: "your opponent is on your back"
         },
     bottomSideControl : {
@@ -88,7 +88,7 @@ var positions = {
 }
 
 
-// Used to determine how your opponent could be positioned, given what you're doing.
+// Used to determine how the opposite position could be positioned
 var positionPairs = {
     mount : ["mounted"],
     mounted : ["mount"],
@@ -103,7 +103,7 @@ var positionPairs = {
     kneeOnBelly : ["bottomSideControl"],
     halfGuard : ["halfGuardBottom"],
     halfGuardBottom : ["halfGuard"],
-    butterfly : ["neutralGround", "standing"]
+    butterfly : ["neutralGround"]
 }
 
 

@@ -26,24 +26,24 @@ var modifiers = {
                 "frame to create and maintain space"
             ],
     neutralGround : [
-            
+                "make grips"
             ],
     standing : [
-            
+                "stay focused"
             ],
     butterfly : [
-            
+                "stay focused"            
             ],
     rearMount : [
                 "get hooks in",
-                "strong hand grip"
+                "don't cross feet when hooked",
+                "strong seatbelt grip"
             ],
     bottomSideControl : [
-                "elbows tucked to you",
+                "elbows and arms tucked in to your chest",
                 "arm blade against opponent's neck",
                 "time your bridge",
                 "wedge arm against opponent's waist like a belt",
-                "arms on chest, palms and elbows together",
                 "foot propped on opposite knee as shield"
             ]
 };

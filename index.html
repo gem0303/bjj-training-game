@@ -12,31 +12,45 @@
 </head>
 
 <body>
-  <h2 class="top_header">Train!</h2>
+  <h1 class="top_header">Train!</h1>
 
   <div id="wrapper">
 
       <div class="col">
 
          <div id="position_wrapper">
-            <h3>Current Position: <span id="current_position">Blank</span></h3>
+            <h2>Current Position: <span id="current_position">Blank</span></h2>
             <p>Opponent's Current Position: <span id="current_position_opp">Blank</span></p>
             <p>Position Modifiers: <span id="current_mods">None</span></p>
          </div>
 
-          <!--TODO: feature where you can attempt a move but won't make it-->
-          <!--<p>Attempting Move: <span id="current_move"></span></p>-->
-
-          <h3>Possible Moves:</h3>
-
-          <div id="moves_list"></div>
+         
+         <div id="offense">
+              <h2>Possible Moves:</h2>
+              <div id="moves_list"></div>
 
 
-          <h3>Possible Position Modifiers:</h3>
+              <h2>Possible Position Modifiers:</h2>
+              <div id="mod_list"></div>
 
-          <div id="mod_list"></div>
-
-          <input id="submit" type="button" value="Do It!" onclick="performMove()"/>
+              <input id="submit" type="button" value="Do It!"/>
+          </div>
+          
+          <div id="defense">
+               <h2>Your opponent is attempting a move!</h2>
+               <h3>Opponent's Move: <span id="attempted_move_opp">Blank</span></h3>
+               
+              <h3>Possible Defenses:</h3>
+              <div id="defense_list"></div>
+              
+              <h3>Possible Actions:</h3>               
+              <input id="submit_defend_yes" type="button" value="Defend"/>
+              <input id="submit_defend_no" type="button" value="Don't Defend"/>
+              <input id="submit_defend_random" type="button" value="Random"/>
+             
+              
+          </div>
+          
      </div>
 
       <div class="col">
@@ -60,7 +74,7 @@
 
  <div id="bottom_nav">
     <p id="startFromSeated" class="restart">Start a new match on the ground</p>
-    <p id="refresh" class="restart">Start me somewhere random</p>
+    <p id="startFromRandom" class="restart">Start me somewhere random</p>
 
     <div id="posDropdown">
         <select id="posList" onmousedown="this.value='';" onchange="reset(this.value);">
@@ -68,15 +82,26 @@
         </select>
     </div>
 
-    <input type="checkbox" id="AIoffense" checked onclick="changeSettings(this)" /> AI Offense |
-    <input type="checkbox" id="AIdefense" onclick="changeSettings(this)"/> AI Defense
+    <input type="checkbox" id="AIoffense" checked onclick="updateSettings(this)" /> AI Offense |
+    <input type="checkbox" id="AIdefense" checked onclick="updateSettings(this)"/> AI Defense | 
+    <p id="forceAImove">Force AI move</p>
+    
+    
 
 </div>
 
 
 
- <div id="cover">
-     <div id="popup">
+ <div id="popup_small" class="cover">
+     <div class="inner">
+         <h3 class="title">Title</h3>
+         <p class="text">Text</p>
+         <button>OK</button>
+     </div>
+ </div>
+ 
+ <div id="popup_offense" class="cover">
+     <div class="inner">
          <h3 class="title">Title</h3>
          <p class="text">Text</p>
          <button>OK</button>
@@ -96,6 +121,7 @@
    <script src="positionList.js"></script>
    <script src="movesList.js"></script>
    <script src="modifiers.js"></script>
+   <script src="ai.js"></script>
    <script src="main.js"></script>
 
 </body>

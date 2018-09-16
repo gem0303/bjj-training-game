@@ -13,6 +13,9 @@ a, a:visited {
     padding: 5px;
 }
 
+h1 {font-size: 1.5em;}
+h2 {font-size: 1.25em;}
+h3 {font-size: 1.1em;}
 
 /* Main Gameplay Elements ----------------------- */
 #moves_list a {
@@ -110,20 +113,9 @@ a, a:visited {
 
 
 /* Popup/Notificaion UI elements ----------------------- */
-#cover {
-    width: 100vw;
-    height: 100vh;
-    background-color: rgba(0,0,0,0.5);
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    justify-content: center;
-    align-items: center;
-    opacity: 0;
-    display: none; /*display: flex;*/
-}
 
-#popup {
+
+#popup_small .inner  {
     width: 30em;
     height: 20em;
     border: 1px solid black;
@@ -132,8 +124,21 @@ a, a:visited {
     flex-flow: column wrap;
     justify-content: center;
     align-items: center;
+    padding: 1em 2em;
+    box-sizing: border-box;
+    text-align: center;
 }
 
+.cover {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.5);
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    justify-content: center;
+    align-items: center;
+}
 
 /* Notification Popup at top of screen ----------------------- */
 #notification {

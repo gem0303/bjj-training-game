@@ -108,13 +108,14 @@ var moves = [
         type: "positionChange",
         next: "rearMount",
         notes: "grip same side of lapel, bring elbow to the mat and post off other hand, scoot to one side and swing up over opponent's back. remember to get in hooks",
-        videoUrl: ["https://www.youtube.com/embed/Ahtq9FY3Fws"]
+        videoUrl: ["https://www.youtube.com/embed/Ahtq9FY3Fws"],
+        defense: ["do the thing"]
     },{
         displayName: "Arm Drag Takedown",
         shortName: "armDragTakedown",
         type: "positionChange",
         next: "rearMount", // todo: side control
-        notes: "mirror stance, outside hand grabs wrist, inside hand cups tricep, pull opponent toward you and circle to take back, your inside foot is hooking around theirs" // todo: what to do if you can't circle far enoough to back
+        notes: "mirror stance, outside hand grabs wrist, inside hand cups tricep, pull opponent toward you and circle to take back, your inside foot is hooking around theirs" // todo: what to do if you can't circle far enough to back
     },{
         displayName: "Standing Guard Break",
         shortName: "standingGuardBreak",
@@ -164,6 +165,12 @@ var moves = [
         next: "butterfly",
         notes: "Thread inside arm under opponent, same side leg/knee is bent up and pushing against opponent to make some space. Threaded arm grabs OPPOSITE foot, and pulls it through. Frame with the other foot against hip.",
         videoUrl: ["https://www.youtube.com/embed/thUHGQyYrjc?start=45"]
+    },{
+        displayName: "Defend",
+        shortName: "defendBack",
+        type: "positionChange",
+        next: "inGuard",
+        notes: "Get leg hooks out, break hand grips, turn toward opponent so they don't have your back any longer"
     }
 ]
 
