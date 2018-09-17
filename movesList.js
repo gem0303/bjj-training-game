@@ -4,17 +4,20 @@ var moves = [
         shortName: "armBarFromMount",
         type: "submission",
         notes: "Trap arm. Bring opposite leg to one knee. Put weight on that foot and hands completely. Sweep other leg around FAST and SIT DOWN. PINCH knees to their torso hard. Keep their arm tight against chest. Lean back. Thumb up. Lift hips to finish.",
-        defense: ["do the thing"]
+        defense: ["hold on to arm being attacked"]
     },{
         displayName: "Arm Bar From Guard",
         shortName: "armBarFromGuard",
         type: "submission",
-        notes: "Underhand grip on opponent's elbow, pull it across their body. You will spin the direction the arm is pointed. Leg on hip to help push. Pole through your belly, spin and get spine turned on opponent. Swing other leg up over opponent's head. PINCH KNEES TOGETHER. DO NOT CROSS FEET. Bite down, monkey hanging in a tree. Move hand to their wrist for better control, their thumb pointed up. Arm bar by lifting hips and keep their arm close to our chest."
+        notes: "Underhand grip on opponent's elbow, pull it across their body. You will spin the direction the arm is pointed. Leg on hip to help push. Pole through your belly, spin and get spine turned on opponent. Swing other leg up over opponent's head. PINCH KNEES TOGETHER. DO NOT CROSS FEET. Bite down, monkey hanging in a tree. Move hand to their wrist for better control, their thumb pointed up. Arm bar by lifting hips and keep their arm close to our chest.",
+        defense: ["put head down to block leg", "pinch knees to his hips", "lock arm behing attacked against your other bicep", "stack opponent/post knee", "pull elbow free"]
     },{
         displayName: "Kimura from Guard",
         shortName: "kimuraFromGuard",
         type: "submission",
-        notes: "get opponent off balance, grab their wrist. plant feet on floor, lean up and sweep opp arm over their shoulder/elbow. Loop underneath their arm and grab your own wrist. Lean back, leg up over opponent's back. Pinch elbows to chest. Scoot hip out and turn."
+        notes: "get opponent off balance, grab their wrist. plant feet on floor, lean up and sweep opp arm over their shoulder/elbow. Loop underneath their arm and grab your own wrist. Lean back, leg up over opponent's back. Pinch elbows to chest. Scoot hip out and turn.",
+        defense: ["turn palm to opponent's chest", "drive your ear to his shoulder"]
+        // https://www.youtube.com/watch?v=2DYXS2feaF8
     },{
         displayName: "Kimura from Mount",
         shortName: "kimuraFromMount",
@@ -27,14 +30,16 @@ var moves = [
         type: "positionChange",
         next: "mount",
         notes: "move opponent off balance. deep collar grip, grab sleeve on same side. open guard and make the belt, other leg FLAT on the ground. pull them forward ('check the time'). bring leg out wide and smash it HARD against their legs to complete the sweep. alternate: use both legs in more of a true scissor motion by pulling bottom leg back and pushing top leg forward to topple over your opponent.",
-        videoUrl: ["https://www.youtube.com/embed/UBf7uF5x8GQ"]
+        videoUrl: ["https://www.youtube.com/embed/UBf7uF5x8GQ"],
+        defense: ["post on outside leg and inner arm", "try to keep eyes on opponent"] //https://www.youtube.com/watch?v=mRFVO1DOD5Y
 
     },{
         displayName: "Pass Guard",
         shortName: "passGuard",
         type: "positionChange",
         next: "sideControl",
-        notes: "placeholder move because passing guard can mean a lot of different things. generally, want to apply pressure to one of opponents legs, get over it, and advance into half guard or side control." // todo: smash pass, other variations
+        notes: "placeholder move because passing guard can mean a lot of different things. generally, want to apply pressure to one of opponents legs, get over it, and advance into half guard or side control."
+        // todo: smash pass, other variations
     },{
         displayName: "Shrimp",
         shortName: "shrimp",
@@ -63,22 +68,27 @@ var moves = [
         displayName: "Rear Naked Choke",
         shortName: "rearNakedChoke",
         type: "choke",
-        notes: "choking arm goes around opponent's neck, elbow aligned w/ their chin. grip bicep of your other arm. that arm wraps behind opponent's head. tighten and pull to finish."
+        notes: "choking arm goes around opponent's neck, elbow aligned w/ their chin. grip bicep of your other arm. that arm wraps behind opponent's head. tighten and pull to finish.",
+        defense: ["clamp down on opponent's arms (armpit/grips)", "shoulders up, chin down"] // https://www.youtube.com/watch?v=JR2e0IsqhrQ
     },{
         displayName: "Guillotine",
         shortName: "guillotine",
         type: "submission",
-        notes: "opponent's head is facing you. put armpit on their face (crown of their head) and wrap arm around neck (OVERHAND). use opposite hand to grip your choking arm tightly."
+        notes: "opponent's head is facing you. put armpit on their face (crown of their head) and wrap arm around neck (OVERHAND). use opposite hand to grip your choking arm tightly.",
+        defense: [""]
     },{
         displayName: "Ankle Lock",
         shortName: "ankleLock",
         type: "submission",
-        notes: "Arrange feet so your outside leg is pressing against opponent's hip/stomach. Your other leg is tucked under their butt. You are squeezing the opponent's leg in between yours. Pinch your knees hard. Thread your arm under their calf (may need to shrimp to make proper space). Grab your threaded wrist/arm tightly. Place blade of threaded forearm under their heel, grip tight with opposite hand. arch back, make a sawing motion for extra ouch." // todo butterfly guard isn't really the right place for this
+        notes: "Arrange feet so your outside leg is pressing against opponent's hip/stomach. Your other leg is tucked under their butt. You are squeezing the opponent's leg in between yours. Pinch your knees hard. Thread your arm under their calf (may need to shrimp to make proper space). Grab your threaded wrist/arm tightly. Place blade of threaded forearm under their heel, grip tight with opposite hand. arch back, make a sawing motion for extra ouch.",
+        defense: [""]
+        // todo butterfly guard isn't really the right place for this
     },{
         displayName: "Collar Choke",
         shortName: "collarChoke",
         type: "choke",
-        notes: "sink hand deep into collar cross body, knuckles touching collar bone. opposite hand goes under your arm to grip opposite side of collar. DEEP. Lean back, inhale. Engage lats to pull your elbows to ground."
+        notes: "sink hand deep into collar cross body, knuckles touching collar bone. can pull on back of neck to break posture more. opposite hand goes under your arm to grip opposite side of collar. DEEP. Lean back, inhale. Engage lats to pull your elbows to ground.",
+        defense: ["two-handed grip strip", "bob and weave under arm", "block their free arm"] //https://www.youtube.com/watch?v=rJM7Ou84ZA4
     },{
         displayName: "Stand Up",
         shortName: "standUp",
@@ -89,39 +99,44 @@ var moves = [
         displayName: "Triangle Choke",
         shortName: "triangleChokeFromGuard",
         type: "submission",
-        notes: "shoot hips up, get leg wrapped around opponent's neck, grip ankle with your hand. close into figure 4 as soon as possible and squeeze."
+        notes: "shoot hips up, get leg wrapped around opponent's neck, grip ankle with your hand. close into figure 4 as soon as possible and squeeze.",
+        defense: ["look up", "slide vulnerable arm back to the floor"]
     },{
         displayName: "Monoplata",
         shortName: "monoplataFromMount",
         type: "submission",
         notes: "aka shoulder lock. Trap opponent's arm with your elbow (clamp tight to side). Post same side leg, roll opponent to their side. Post other hand on mat (or opponent's face). Sweep posted leg across opponent's face, roll so butt lands on mat. Their arm should be in between your legs. Roll your legs away from their face to put tension on their arm. Can also straighten your legs to provide tension.",
-        videoUrl: ["https://www.youtube.com/embed/zD3sjRk9i5w"]
+        videoUrl: ["https://www.youtube.com/embed/zD3sjRk9i5w"],
+        defense: [""]
     },{
         displayName: "Gogoplata",
         shortName: "gogoplataFromMount",
         type: "submission",
         notes: "Trap opponent's arm with your elbow (clamp tight to side). Post same side leg, roll opponent to their side. With leg posted and opponent's arm trapped, post forward on arm (same side as trapped arm). with other hand, grab posted leg and drag across opponent neck. push weight into neck, can use arms to pull on the back of their head, or grab your toes and pull. If this isn't working, you can transition into monoplata by shifting weight off chest, sink butt to mat, bring other leg up and pinch them together, etc.",
-        videoUrl: ["https://www.youtube.com/embed/MnauxGlVm2g"]
+        videoUrl: ["https://www.youtube.com/embed/MnauxGlVm2g"],
+        defense: [""]
     },{
         displayName: "Collar Drag",
         shortName: "collarDrag",
         type: "positionChange",
         next: "rearMount",
         notes: "grip same side of lapel, bring elbow to the mat and post off other hand, scoot to one side and swing up over opponent's back. remember to get in hooks",
-        videoUrl: ["https://www.youtube.com/embed/Ahtq9FY3Fws"],
-        defense: ["do the thing"]
+        videoUrl: ["https://www.youtube.com/embed/Ahtq9FY3Fws"]
     },{
         displayName: "Arm Drag Takedown",
         shortName: "armDragTakedown",
         type: "positionChange",
         next: "rearMount", // todo: side control
-        notes: "mirror stance, outside hand grabs wrist, inside hand cups tricep, pull opponent toward you and circle to take back, your inside foot is hooking around theirs" // todo: what to do if you can't circle far enough to back
+        notes: "mirror stance, outside hand grabs wrist, inside hand cups tricep, pull opponent toward you and circle to take back, your inside foot is hooking around theirs", // todo: what to do if you can't circle far enough to back
+        defense: [""]
+        
     },{
         displayName: "Standing Guard Break",
         shortName: "standingGuardBreak",
         type: "positionChange",
         next: "sideControl", // todo: half guard
-        notes: "Catpaw grip on their sleeve, get same side knee up, then the other (tip: swing your hips slightly to the side to make space), stand up FAST and throw hips out to break opponent's legs apart (push with stiff arm against knee if needed). Step over leg so it's trapped between your thighs and drive knee to floor to break through into half guard, or, if possible, drive opponent onto their side and circle around into side mount. (more notes needed here of alternate techniques). you can also circling your opponent once you're standing to dislodge legs and disorient them."
+        notes: "Catpaw grip on their sleeve, get same side knee up, then the other (tip: swing your hips slightly to the side to make space), stand up FAST and throw hips out to break opponent's legs apart (push with stiff arm against knee if needed). Step over leg so it's trapped between your thighs and drive knee to floor to break through into half guard, or, if possible, drive opponent onto their side and circle around into side mount. (more notes needed here of alternate techniques). you can also circling your opponent once you're standing to dislodge legs and disorient them.",
+        defense: [""]
     },{
         displayName: "Bow & Arrow Choke",
         shortName: "bowArrowChoke",
@@ -166,11 +181,25 @@ var moves = [
         notes: "Thread inside arm under opponent, same side leg/knee is bent up and pushing against opponent to make some space. Threaded arm grabs OPPOSITE foot, and pulls it through. Frame with the other foot against hip.",
         videoUrl: ["https://www.youtube.com/embed/thUHGQyYrjc?start=45"]
     },{
-        displayName: "Defend",
+        displayName: "Defend", // when opp has your back
         shortName: "defendBack",
         type: "positionChange",
         next: "inGuard",
         notes: "Get leg hooks out, break hand grips, turn toward opponent so they don't have your back any longer"
+    },{
+        displayName: "Pass to Mount", // from side control
+        shortName: "passToMount",
+        type: "positionChange",
+        next: "mount",
+        notes: "Shoulder pressure, forearm like a belt across hips, knee replaces arm, far side arm covers opponent's far side arm/shoulder to keep it out of the way, shift hips and throw leg rest of the way over.",
+        videoUrl: ["https://www.youtube.com/embed/Qx9ESxCCy6E"]
+    },{
+        displayName: "Pass to Mount 2", // from side control
+        shortName: "passToMount2",
+        type: "positionChange",
+        next: "mount",
+        notes: "Heavy shoulder pressure, outside arm reaches over and smashes against his legs to drop them toward you, step behind his legs quickly and roll over, use outside arm to block his far side arm/shoulder.",
+        videoUrl: ["https://www.youtube.com/embed/Qx9ESxCCy6E"]
     }
 ]
 
@@ -188,5 +217,6 @@ put x guard stuff into game
 
 baseball bat choke - spinning thing
 
+seated guard, knee push sweep https://www.youtube.com/watch?v=s1tPIdANAOQ
 
 */

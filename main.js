@@ -64,8 +64,6 @@ function updateGame(who, move) {
         
         // else -> let player perform the move, then give AI a chance to take a move
         
-        
-        
         //updateHistory("Opponent does not block")      
         performMove();
         if (!gameOver) {

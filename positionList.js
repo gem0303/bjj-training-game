@@ -21,7 +21,7 @@ var positions = {
     sideControl : {
             shortName: "sideControl",
             displayName: "Side Control",
-            validMoves: ["popUp", "guillotineFromSide"],
+            validMoves: ["popUp", "guillotineFromSide", "passToMount", "passToMount2"],
             notes: "opponent on back, you on top. one arm under head, other hand on hip to control them, or snowball grip."
         },
     mounted : {
@@ -117,5 +117,5 @@ x guard
 various guard positions from the stephen kesting pdf
 
 
-
+ 
 */

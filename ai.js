@@ -60,6 +60,7 @@ function opponentAttemptMove() {
     // get the possible defenses to the move
     
     // -------------    SETUP DEFENSE MODIFIERS    --------------- //
+    $defense_list.empty(); // todo - put this somewhere else?
     
     if ( AImove.hasOwnProperty("defense") && AImove.defense.length > 0 ) {
         AImove.defense.forEach(function (defense) {
