@@ -200,11 +200,44 @@ var moves = [
         next: "mount",
         notes: "Heavy shoulder pressure, outside arm reaches over and smashes against his legs to drop them toward you, step behind his legs quickly and roll over, use outside arm to block his far side arm/shoulder.",
         videoUrl: ["https://www.youtube.com/embed/Qx9ESxCCy6E"]
+    },{
+        displayName: "Triangle Choke",
+        shortName: "triangleChokeFromBotHG",
+        type: "choke",
+        notes: "If you are in bottom half guard, usually you'd have your two legs wrapped around one of your opponent's. You should have an underhook or overhook on their arm too. Free your legs. Roll to your side. Top/outside leg comes up to post against hip to control space/distance. Bottom leg can help manage the distance between you and your opponent. Grab opponent's wrist (on the non hooked arm) -- they're likely pushing on your bottom leg. Move their wrist out to the side. Pull out your bottom leg and throw it over opponent's shoulder to get the triangle locked up. If the arm you're attacking is not across your chest (still on same side), then bridge your hips up and pull it over."
+    },{
+        displayName: "Sit Up Sweep",
+        shortName: "situpSweep",
+        type: "positionChange",
+        next: "mount",
+        notes: "aka 'sinky armpit sweep' Get a strong lapel grip. Shrimp to the side, post off your leg, and sit up explosively. Your arm should cross your body and scoop over your opponent's shoulder, cupping their tricep. Momentum should roll opponent on to their back.",
+        videoUrl: ["https://www.youtube.com/embed/PcEniBDPNMU"]
+    },{
+        displayName: "Triangle Choke",
+        shortName: "triangleFromSide",
+        type: "submission",
+        notes: "Knees spiking into opponent's ribs. Arm under head. Post all your weight on the arm on their chest. Shoulder digging into their armpit to get that near-side arm isolated. Move leg across opponent, and at the same time shift hips to shove leg under opponent and land on your side/back. Close the triangle. Stay calm, work it tighter.",
+        videoUrl: []
     }
+
+
 ]
 
 
+
+
 /*
+
+// TEMPLATE
+
+},{
+        displayName: "NAME",
+        shortName: "SHORT NAME",
+        type: "positionChange submission choke",
+        next: "mount",
+        notes: "NOTES",
+        videoUrl: []
+    }
 
 // FUTURE
 

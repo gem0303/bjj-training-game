@@ -8,7 +8,7 @@ var positions = {
     inGuard : {
             shortName: "inGuard",
             displayName: "Opponent in Your Guard",
-            validMoves: ["armBarFromGuard", "scissorSweep", "kimuraFromGuard", "collarChoke", "triangleChokeFromGuard", "breakPosture"],
+            validMoves: ["armBarFromGuard", "scissorSweep", "kimuraFromGuard", "collarChoke", "triangleChokeFromGuard", "situpSweep"],
             notes: "your legs are wrapped around opponent's waist. remember to keep closed guard! try to break posture (hands/arms > grip fighting, legs > break posture) and meanwhile look for opponent's mistakes."
         },
     inOppGuard : {
@@ -82,13 +82,13 @@ var positions = {
     halfGuardBottom : {
             shortName: "halfGuardBottom",
             displayName: "Half Guard (Bottom)",
-            validMoves: [""],
+            validMoves: ["triangleChokeFromBotHG"],
             notes: "Opponent has his leg(s) hooked around one of yours, possibly some kind of arm control."
         }
 }
 
 
-// Used to determine how the opposite position could be positioned
+// Used to determine the opposite position
 var positionPairs = {
     mount : ["mounted"],
     mounted : ["mount"],
