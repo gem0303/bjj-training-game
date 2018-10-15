@@ -7,7 +7,8 @@ var modifiers = {
             ],
     inGuard : [
                 "closed guard",
-                "break opponent's posture with legs"
+                "break opponent's posture with legs",
+                "grip sleeves/lapel/collar"
             ],
     inOppGuard : [
                 "straight spine",
@@ -29,7 +30,7 @@ var modifiers = {
                 "make grips"
             ],
     standing : [
-                "stay focused"
+                "don't let stance become too wide/narrow"
             ],
     butterfly : [
                 "stay focused"            

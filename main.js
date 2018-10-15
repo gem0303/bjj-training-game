@@ -80,7 +80,7 @@ function updateGame(who, move) {
             // check what the move type is
             switch(AImove.type) {
                 case "positionChange":
-                    oppPosChange();
+                    oppPosChange(AImove.next);
                     break;
                 case "submission":
                 case "choke":
@@ -90,10 +90,10 @@ function updateGame(who, move) {
                     showNotification("ALERT", "Move type not supported")
             }
             
-            function oppPosChange() {
+/*            function oppPosChange() {
                 clearMoveNotes();
-                updatePosModList();
-
+                resetPosModList()
+                
                 // update opponent position
                 opponentPosition = positions[AImove.next]; 
                 $opponent_position.text(opponentPosition.displayName);
@@ -110,7 +110,7 @@ function updateGame(who, move) {
                 // clear out variable when no longer needed
                 AImove = null;
                 updateGame("AI");
-            }
+            }*/
             
             
             
@@ -145,15 +145,13 @@ function performMove() {
     selectedMove = null;
 
     clearMoveNotes();
-    updatePosModList();
+    resetPosModList();
 
     if (currentMove.type == "positionChange") {
         updateHistory("You " + currentMove.displayName);
         updatePosition(positions[currentMove.next])
     } else if (currentMove.type == "submission" || currentMove.type == "choke") {
         endRound("win");
-    } else if (currentMove.type == "modifier") {
-        alert("You did: " + currentMove.displayName) // currently unused, handled a different way
     } else {
         console.log("Error");
     }
@@ -194,7 +192,7 @@ $button_defend_no.click(function() {
     playerDoesntDefendAI();
 })
 
-
+// Random pick
 $button_defend_random.click(function() {    
     var chance = getRandomInt(0, 1);
     if (chance == 1) {
@@ -274,22 +272,20 @@ function addMoves() {
 
 
 // -------------    UPDATE THE CURRENT LIST OF POSITION MODIFICATIONS    --------------- //
-// if function is called with a modifier, add it to the list.
-// if no parameter included, then reset the list
+// adds the modification to mod list
 function updatePosModList(mod) {
-    if (mod) {
-        if ($("#current_mods").text() == "None") {
-            $("#current_mods").empty();
-            $("#current_mods").append(mod)
-        } else {
-            $("#current_mods").append(", " + mod)
-        }
-
-    } else {
+    if ($("#current_mods").text() == "None") {
         $("#current_mods").empty();
-        $("#current_mods").text("None")
+        $("#current_mods").append(mod)
+    } else {
+        $("#current_mods").append(", " + mod)
     }
+}
 
+function resetPosModList() {
+    $("#current_mods").empty();
+    $("#current_mods").text("None")
+    
 }
 
 
@@ -298,18 +294,46 @@ function updatePosModList(mod) {
     UPDATE CURRENT GAME POSITIONS
   ------------------------------- */
 // Specifically for when a player completes a move
-function updatePosition(pos) {
-    currentPosition = pos;
-    $current_position.text(pos.displayName);
+function updatePosition(playerPos, oppPos) {
+    currentPosition = playerPos;
+    $current_position.text(playerPos.displayName);
+    
+    if (oppPos) {
+        opponentPosition = oppPos;
+    } else {
+        opponentPosition = getPositionPair(currentPosition);  
+    }
 
-    opponentPosition = getPositionPair(currentPosition);    
+    //opponentPosition = getPositionPair(currentPosition);    
     $opponent_position.text(opponentPosition.displayName);
 
-    $("#positionNote").text(pos.notes);
-    updateHistory(pos.displayName);
+    $("#positionNote").text(playerPos.notes);
+    updateHistory(playerPos.displayName);
     addMoves();
 }
 
+// Specifically for when opponent is completing the move
+function oppPosChange(oppPos) {
+    clearMoveNotes();
+    resetPosModList()
+
+    // update opponent position
+    opponentPosition = positions[oppPos];
+    $opponent_position.text(opponentPosition.displayName);
+    
+    // update player position
+    currentPosition = getPositionPair(opponentPosition);
+    $current_position.text(currentPosition.displayName);
+
+    $("#positionNote").text(currentPosition.notes);
+    updateHistory(currentPosition.displayName);
+    addMoves();
+
+
+    // clear out variable when no longer needed
+    AImove = null;
+    updateGame("AI");
+}
 
 
 /* -------------------------------
@@ -364,7 +388,8 @@ function endRound(win) {
 
 var quotes = [
     "“Success is not final, failure is not fatal: It is the courage to continue that counts.”",
-    "“You can't always win, but you can always try.”"
+    "“You can't always win, but you can always try.”",
+    "“You can't always be winning. You can always be learning.”"
 ]
 
 
@@ -406,8 +431,13 @@ function showNotification(title, text, className) {
         HELPER FUNCTIONS
   ------------------------------- */
 function getPositionPair(pos) {
-    var temp = positionPairs[pos.shortName][0]; // for now, just get first move in list. eventually get one at random if there's 2+ options.    
-    return positions[temp]
+        
+    var potential = positionPairs[pos.shortName];
+    var rand = getRandomInt(0, potential.length-1);    
+    var name = potential[rand];
+        
+    return positions[name]
+    //return positions[positionPairs[pos.shortName][getRandomInt(0, potential.length-1)]]
 }
 
 
@@ -458,7 +488,7 @@ function reset(position) {
     // clear out old text
     $("#current_move, #positionNote, #defense_list").empty();
     clearMoveNotes();
-    updatePosModList();
+    resetPosModList();
 
     $("#history").html("<b>History:</b> ")
 
@@ -506,7 +536,7 @@ function init() {
     updateSettings( $("#AIdefense")[0] )
 
     updatePosDropdown();
-    updatePosition(positions["neutralGround"])
+    updatePosition(positions["neutralGround"], positions["neutralGround"])
     //updatePosition(positions[getRandomPosition()]);
 }
 

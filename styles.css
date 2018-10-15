@@ -67,6 +67,16 @@ h3 {font-size: 1.1em;}
 }
 
 
+/* Generic button styles */
+.button {
+    color: #efefef;
+    background-color: #777;
+    padding: 0.5em 0.5em;
+    border-radius: 12px;
+    cursor: pointer;
+    text-align: center;
+}
+
 /* Submit Button ----------------------- */
 #submit {
     margin-top: 1em;
@@ -92,8 +102,7 @@ h3 {font-size: 1.1em;}
 
 .restart {
     font-style: italic;
-    cursor: pointer;
-    color: green;
+    color: #75ff75;
 }
 
 /* Bottom of page ----------------------- */
@@ -103,14 +112,22 @@ h3 {font-size: 1.1em;}
 }
 
 #bottom_nav {
-    margin: 1em 0;
+    margin: 2em 0;
 }
 
 #bottom_nav p, #bottom_nav div {
     display: inline-block;
-    margin: 0px 1em;
+    margin: 0px 0.5em;
 }
 
+/* Footer ----------------------- */
+#footer p {
+    font-size: 0.8em;
+}
+
+#footer a {
+    padding: 0;
+}
 
 /* Popup/Notificaion UI elements ----------------------- */
 

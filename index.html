@@ -73,8 +73,8 @@
  <div id="history"><b>History:</b> </div>
 
  <div id="bottom_nav">
-    <p id="startFromSeated" class="restart">Start a new match on the ground</p>
-    <p id="startFromRandom" class="restart">Start me somewhere random</p>
+    <p id="startFromSeated" class="restart button">Start new match<br> on the ground</p>
+    <p id="startFromRandom" class="restart button">Start somewhere<br> random</p>
 
     <div id="posDropdown">
         <select id="posList" onmousedown="this.value='';" onchange="reset(this.value);">
@@ -83,11 +83,15 @@
     </div>
 
     <input type="checkbox" id="AIoffense" checked onclick="updateSettings(this)" /> AI Offense |
-    <input type="checkbox" id="AIdefense" checked onclick="updateSettings(this)"/> AI Defense | 
-    <p id="forceAImove">Force AI move</p>
+    <input type="checkbox" id="AIdefense"  onclick="updateSettings(this)"/> AI Defense | 
+    <p id="forceAImove" class="button">Force AI move</p>
     
-    
+</div>
 
+<div id="footer">
+  <p><a href="https://github.com/gem0303/bjj-training-game">Find me on github</a>
+    or 
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSf6zIawv7MyxVzMmmn34gHaJ5h4kAhY5zmXqH-mVe0F6tpiFg/viewform?usp=sf_link">contact me here!</a></p>
 </div>
 
 

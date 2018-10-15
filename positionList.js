@@ -2,7 +2,7 @@ var positions = {
     mount : {
             shortName: "mount",
             displayName: "Mount",
-            validMoves: ["armBarFromMount", "kimuraFromMount", "monoplataFromMount", "gogoplataFromMount", "armTriangleChokeMount"],
+            validMoves: ["armBarFromMount", "kimuraFromMount", "monoplataFromMount", "gogoplataFromMount", "armTriangleChokeMount", "rollingKimuraFromMount"],
             notes: "sitting on opponent's chest, as far up as you can get, knees pinched tight"
         },
     inGuard : {
@@ -14,20 +14,19 @@ var positions = {
     inOppGuard : {
             shortName: "inOppGuard",
             displayName: "In Opponent's Guard",
-            validMoves: ["passGuard", "standUp", "standingGuardBreak"], // todo guillotine?
+            validMoves: ["passGuard", "standUp", "standingGuardBreak"],
             notes: "you are between opponent's legs, which are most likely clamped around behind your back. solid base, elbows in, posture up, head shouldn't go past hands"
-        // variations: open guard, closed guard, in opp half guard
         },
     sideControl : {
             shortName: "sideControl",
             displayName: "Side Control",
-            validMoves: ["popUp", "guillotineFromSide", "passToMount", "passToMount2"],
+            validMoves: ["popUp", "guillotineFromSide", "passToMount", "passToMount2", "papercutterChoke"],
             notes: "opponent on back, you on top. one arm under head, other hand on hip to control them, or snowball grip."
         },
     mounted : {
             shortName: "mounted",
             displayName: "Mounted by Opponent",
-            validMoves: ["shrimp", "sweepWhileMounted"],
+            validMoves: ["shrimp", "sweepWhileMounted", "legTrapMountEscape"],
             notes: "opponent is sitting on your chest. not the best place to be, breathe and stay calm!"
         },
     neutralGround : {
@@ -53,7 +52,6 @@ var positions = {
             displayName: "Have Opponent's Back",
             validMoves: ["rearNakedChoke", "bowArrowChoke"],
             notes: "your chest is on your opponent's back, you are holding on to them"
-        // TODO variations: with hooks, with 1 hook
         },
     rearMounted : {
             shortName: "rearMounted",
@@ -79,11 +77,23 @@ var positions = {
             validMoves: [""],
             notes: "You are on your side using your inside leg to hook one of your opponent’s legs and have some sort of underhook with your top arm. There are many minor variations to this position, including having your legs triangled, gripping his gi or his belt, etc"
         },
-    halfGuardBottom : {
-            shortName: "halfGuardBottom",
+    bottomHalfGuard : {
+            shortName: "bottomHalfGuard",
             displayName: "Half Guard (Bottom)",
-            validMoves: ["triangleChokeFromBotHG"],
+            validMoves: ["triangleChokeFromBotHG", "baseballBatChokeFromBottom"],
             notes: "Opponent has his leg(s) hooked around one of yours, possibly some kind of arm control."
+        },
+    turtle : {
+            shortName: "turtle",
+            displayName: "Turtle",
+            validMoves: [],
+            notes: ""
+        },
+    delarivaGuard : {
+            shortName: "delarivaGuard",
+            displayName: "De La Riva Guard",
+            validMoves: [],
+            notes: "Opponent is standing. You're on your back underneath them. Get your butt near their forward foot. Control ankle or pants leg. Hook foot behind their knee and into their thigh from underneath. Opposite foot posted on the other thigh, maybe in the hip/waist area. With free hand, get/maintain a grip on same side arm, far side arm, or lapel."
         }
 }
 
@@ -96,14 +106,16 @@ var positionPairs = {
     inOppGuard : ["inGuard"],
     sideControl : ["bottomSideControl"],
     bottomSideControl : ["sideControl", "kneeOnBelly"],
-    neutralGround : ["neutralGround", "standing"],
+    neutralGround : ["neutralGround", "standing", "turtle"],
     standing : ["standing", "neutralGround"],
     rearMount : ["rearMounted"],
     rearMounted : ["rearMount"],
     kneeOnBelly : ["bottomSideControl"],
-    halfGuard : ["halfGuardBottom"],
-    halfGuardBottom : ["halfGuard"],
-    butterfly : ["neutralGround"]
+    halfGuard : ["bottomHalfGuard"],
+    bottomHalfGuard : ["halfGuard"],
+    butterfly : ["neutralGround"],
+    turtle : ["neutralGround"],
+    delarivaGuard : ["standing"]
 }
 
 
@@ -116,6 +128,6 @@ x guard
 
 various guard positions from the stephen kesting pdf
 
-
+sidemount
  
 */
