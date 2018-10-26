@@ -31,10 +31,10 @@ var positionKeys = Object.keys(positions);
 /* -------------------------------
       CLICK TO DO MOVE BUTTON
   ------------------------------- */
-$("#submit").click(function(){    
-    if ( $(".selected").length > 0 ) {
-        updateGame("player")
-    }    
+$("#submit").click(function(){
+    if ( !$(this).hasClass("disabled") && $(".selected").length > 0 ) {
+        updateGame("player")        
+    }  
 })
 
 
@@ -56,8 +56,17 @@ function updateGame(who, move) {
                 
         if (opponentDefends) {
             // if opponent defends -> show alert and stop the function
-            showNotification("ALERT", "Your opponent defends!")
-            updateHistory("Opponent blocks " + selectedMove.displayName)
+            showNotification("ALERT", "Your opponent defends!");
+            updateHistory("Opponent blocks " + selectedMove.displayName);
+            
+            // sometimes an opponent defending opens up opportunities for new moves
+            // add those here
+            if (selectedMove.addChain) {                
+                 selectedMove.addChain.forEach(function (moveName) {
+                    addMove(convertMoveNameToObect(moveName));
+                 });
+            }
+            
             updateGame("AI");
             return
         }
@@ -89,30 +98,6 @@ function updateGame(who, move) {
                 default:
                     showNotification("ALERT", "Move type not supported")
             }
-            
-/*            function oppPosChange() {
-                clearMoveNotes();
-                resetPosModList()
-                
-                // update opponent position
-                opponentPosition = positions[AImove.next]; 
-                $opponent_position.text(opponentPosition.displayName);
-
-                // update player position
-                currentPosition = getPositionPair(opponentPosition);
-                $current_position.text(currentPosition.displayName);
-
-                $("#positionNote").text(currentPosition.notes);
-                updateHistory(currentPosition.displayName);
-                addMoves();
-
-
-                // clear out variable when no longer needed
-                AImove = null;
-                updateGame("AI");
-            }*/
-            
-            
             
         }
         // Else, check if opponent will attack
@@ -152,10 +137,13 @@ function performMove() {
         updatePosition(positions[currentMove.next])
     } else if (currentMove.type == "submission" || currentMove.type == "choke") {
         endRound("win");
+    } else if (currentMove.type == "positionModifier") {       
+        updatePosModList(currentMove.displayName);
+        disableMove(currentMove.shortName)
     } else {
         console.log("Error");
     }
-
+    
 }
 
 
@@ -202,92 +190,6 @@ $button_defend_random.click(function() {
     }
 })
 
-/* -------------------------------
-        ADD POSSIBLE MOVES
-  ------------------------------- */
-function addMoves() {
-    $("#moves_list, #mod_list").empty();
-
-    function createLink(target) {
-
-        var newMove = $('<a/>', {
-            'data-move': target.shortName,
-            'href': '#',
-            //'class': 'some-class',
-            'text': target.displayName,
-        })
-
-        return newMove
-    }
-
-    // TODO loop through at start of program and create these lists ahead of time.
-    moves.forEach(function (move) {
-
-        // check that the move is valid
-        if ($.inArray(move.shortName, currentPosition.validMoves) != -1) {
-
-            var moveAction = createLink(move);
-
-            // set up what happens when move is clicked
-            $(moveAction).click(function(e) {
-
-                selectedMove = move;
-
-                $('.selected').removeClass("selected");
-                $(this).addClass("selected");
-                
-                updateMoveNotes(move);
- 
-            })
-
-            // add move to the options list
-            $moves_list.append(moveAction);
-        }
-
-    });
-
-    // -------------    SETUP POSTION MODIFIERS    --------------- //
-    if (modifiers.hasOwnProperty(currentPosition.shortName) && modifiers[currentPosition.shortName].length > 0) {
-        modifiers[currentPosition.shortName].forEach(function (mod) {
-
-            var newMod = $('<a/>', {
-                //'data-mod': mod.shortName,
-                'href': '#',
-                //'class': 'some-class',
-                'text': mod,
-            })
-
-            $(newMod).click(function(e){
-                $(this).remove();
-                updatePosModList(mod)
-            })
-
-            $("#mod_list").append(newMod);
-        })
-    } else {
-        $("#mod_list").text("none");
-    }
-
-}
-
-
-// -------------    UPDATE THE CURRENT LIST OF POSITION MODIFICATIONS    --------------- //
-// adds the modification to mod list
-function updatePosModList(mod) {
-    if ($("#current_mods").text() == "None") {
-        $("#current_mods").empty();
-        $("#current_mods").append(mod)
-    } else {
-        $("#current_mods").append(", " + mod)
-    }
-}
-
-function resetPosModList() {
-    $("#current_mods").empty();
-    $("#current_mods").text("None")
-    
-}
-
 
 
 /* -------------------------------
@@ -309,7 +211,8 @@ function updatePosition(playerPos, oppPos) {
 
     $("#positionNote").text(playerPos.notes);
     updateHistory(playerPos.displayName);
-    addMoves();
+    setupMovesList();
+    setupPosModList();
 }
 
 // Specifically for when opponent is completing the move
@@ -327,13 +230,128 @@ function oppPosChange(oppPos) {
 
     $("#positionNote").text(currentPosition.notes);
     updateHistory(currentPosition.displayName);
-    addMoves();
+    setupMovesList();
+    setupPosModList();
 
 
     // clear out variable when no longer needed
     AImove = null;
     updateGame("AI");
 }
+
+
+/* -------------------------------
+            MOVE LIST
+  ------------------------------- */
+function setupMovesList() {
+    $("#moves_list, #mod_list").empty();
+
+    // TODO loop through at start of program and create these lists ahead of time.
+    moves.forEach(function (move) {
+        
+        // check that the move is valid
+        if ($.inArray(move.shortName, currentPosition.validMoves) != -1) {
+            addMove(move);            
+        }
+
+    });
+
+}
+
+//  ADD MOVE TO LIST
+// This function expects to receive the entire move object.
+function addMove(move) {
+    
+    if (move == null || typeof move !== 'object') {console.log("ERROR: 'add move' function expects the move as an object");}    
+    
+    // factory function to make the move html
+    function createLink(target) {
+
+        var newMove = $('<a/>', {
+            'data-move': target.shortName,
+            'href': '#',
+            //'class': 'some-class',
+            'text': target.displayName,
+        })
+
+        return newMove
+    }
+    
+    var moveAction = createLink(move);
+
+    // set up what happens when move is clicked
+    $(moveAction).click(function(e) {
+
+        selectedMove = move;
+
+        $('.selected').removeClass("selected");
+        $(this).addClass("selected");
+        
+        if ( $(this).hasClass("completed") ) {
+            $("#submit").addClass("disabled");
+        } else {
+            $("#submit").removeClass("disabled");
+        }
+
+        updateMoveNotes(move);
+
+    })
+
+    // add move to the options list
+    $moves_list.append(moveAction);
+}
+
+
+
+
+/* -------------------------------
+         POSITION MODIFIERS
+  ------------------------------- */
+
+// SETUP POSITION MODIFIERS
+function setupPosModList() {
+    // check that the position has modifiers to show
+    if (modifiers.hasOwnProperty(currentPosition.shortName) && modifiers[currentPosition.shortName].length > 0) {
+        
+        modifiers[currentPosition.shortName].forEach(function (mod) {
+
+            var newMod = $('<a/>', {
+                //'data-mod': mod.shortName,
+                'href': '#',
+                //'class': 'some-class',
+                'text': mod,
+            })
+
+            $(newMod).click(function(e){
+                $(this).remove();
+                updatePosModList(mod)
+            })
+
+            $("#mod_list").append(newMod);
+        })
+    } else {
+        $("#mod_list").text("none");
+    }
+}
+
+
+// UPDATE THE CURRENT LIST OF POSITION MODIFICATIONS 
+// adds the modification to mod list
+// expects a string
+function updatePosModList(mod) {
+    if ($("#current_mods").text() == "None") {
+        $("#current_mods").empty();
+        $("#current_mods").append(mod)
+    } else {
+        $("#current_mods").append(", " + mod)
+    }
+}
+
+function resetPosModList() {
+    $("#current_mods").empty();
+    $("#current_mods").text("None")
+}
+
 
 
 /* -------------------------------
@@ -346,23 +364,29 @@ function updateMoveNotes(move, defense) {
     $("#moveNote").text(move.notes);
     move.imageUrl ? $("#imageNote").text(move.imageUrl) : $("#imageNote").text("none");
     
-    // Append video(s) of move ---------------
-    if (move.videoUrl) {
-        for (var i = 0; i < move.videoUrl.length; i++) {
-            /* non youtube version var vidHTML = '<video width="320" height="240" controls><source src="' + move.videoUrl[i] + '" type="video/mp4"></video>'*/
-            var vidHTML = '<iframe width="350" height="197" src="' + move.videoUrl[i] + '" frameborder="0" allow="encrypted-media" allowfullscreen></iframe>'
-            $("#videoNote").append(vidHTML)
-        }
-    }
+    // check if the move has any additional resources
+    if (move.resources) {
 
-    // Append relavent links ---------------
-    if (move.link) {
-        for (var i = 0; i < move.link.length; i++) {
-            var linkHTML = "<a target='_blank' href='" + move.link[i].url + "'>" + move.link[i].title + "</a>"
-            $("#linkNote").append(linkHTML)
-        }
+        // loop through all the resouces and append info depending on type
+        move.resources.forEach(function (resource) {
+
+            if (resource.type == "video") {
+                // non youtube version for reference: var vidHTML = '<video width="320" height="240" controls><source src="' + move.videoUrl[i] + '" type="video/mp4"></video>'
+                var vidHTML = '<iframe width="350" height="197" src="' + resource.url + '" frameborder="0" allow="encrypted-media" allowfullscreen></iframe>'
+                $("#videoNote").append(vidHTML)
+
+            } else if (resource.type == "webpage") {
+                var linkHTML = "<a target='_blank' href='" + resource.url + "'>" + resource.title + "</a>"
+                $("#linkNote").append(linkHTML)
+                
+            } else if (resource.type == "image") {
+                // code for displaying image here
+            }
+        });
+
     }
     
+
     if (defense) {
         console.log("appending defense info too");
         // TODO display information on defending the move
@@ -465,6 +489,30 @@ function updateSettings(el) {
     } else if (el.id == "AIdefense") {
         el.checked ? _AIdefense = true : _AIdefense = false;
     }
+}
+
+// this function takes a move name as a string and returns the appropriate object.
+function convertMoveNameToObect(moveName) {
+    
+    if (typeof moveName !== 'string') {console.log("ERROR: this function expects a string");}    
+    
+    var moveObject;
+    moves.forEach(function (move) {
+        if (moveName == move.shortName) {
+            moveObject = move;
+        }
+    });    
+    return moveObject    
+}
+
+// this function will mark a move as "completed" and disable it, but keep it in the move list so user can still click it to see info.
+function disableMove(target) {
+    // kinda brute force but whatever
+    $("#moves_list a").each(function() {        
+        if ( $(this).data('move') === target ) {
+            $(this).addClass('completed')
+        } 
+    });   
 }
 
 /* -------------------------------

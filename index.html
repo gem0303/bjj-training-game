@@ -58,7 +58,7 @@
              <h3>NOTES</h3>
              <p class="note"><b>Position:</b> <span id="positionNote">none</span></p>
              <p class="note"><b>Move:</b> <span id="moveNote">none</span></p>
-             <p class="note"><b>Image:</b> <span id="imageNote">none</span></p>
+             <!--<p class="note"><b>Image:</b> <span id="imageNote">none</span></p>-->
              <!--<p class="note"><b>Videos:</b> <span id="videoNote">none</span></p>-->
              <p class="note"><b>Videos:</b></p>
              <div id="videoNote"></div>
@@ -73,19 +73,25 @@
  <div id="history"><b>History:</b> </div>
 
  <div id="bottom_nav">
-    <p id="startFromSeated" class="restart button">Start new match<br> on the ground</p>
-    <p id="startFromRandom" class="restart button">Start somewhere<br> random</p>
-
+    <div>
+        <p id="startFromSeated" class="restart button">Start new match<br> on the ground</p>
+        <p id="startFromRandom" class="restart button">Start somewhere<br> random</p>
+    </div>
     <div id="posDropdown">
         <select id="posList" onmousedown="this.value='';" onchange="reset(this.value);">
             <option selected disabled>Pick a position to start from</option>
         </select>
     </div>
-
-    <input type="checkbox" id="AIoffense" checked onclick="updateSettings(this)" /> AI Offense |
-    <input type="checkbox" id="AIdefense"  onclick="updateSettings(this)"/> AI Defense | 
-    <p id="forceAImove" class="button">Force AI move</p>
     
+    <div>
+        <input type="checkbox" id="AIoffense" checked onclick="updateSettings(this)" />Enable AI Offense |
+        <input type="checkbox" id="AIdefense" checked onclick="updateSettings(this)"/>Enable AI Defense | 
+        
+    </div>
+        
+    <div>
+        <p id="forceAImove" class="button">Force AI move</p>
+    </div>
 </div>
 
 <div id="footer">

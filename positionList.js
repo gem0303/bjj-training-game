@@ -7,21 +7,21 @@ var positions = {
         },
     inGuard : {
             shortName: "inGuard",
-            displayName: "Opponent in Your Guard",
-            validMoves: ["armBarFromGuard", "scissorSweep", "kimuraFromGuard", "collarChoke", "triangleChokeFromGuard", "situpSweep"],
+            displayName: "In Guard",
+            validMoves: ["armBarFromGuard", "scissorSweep", "kimuraFromGuard", "collarChoke", "triangleChokeFromGuard", "situpSweep", "xChokeFromGuard"],
             notes: "your legs are wrapped around opponent's waist. remember to keep closed guard! try to break posture (hands/arms > grip fighting, legs > break posture) and meanwhile look for opponent's mistakes."
         },
     inOppGuard : {
             shortName: "inOppGuard",
             displayName: "In Opponent's Guard",
             validMoves: ["passGuard", "standUp", "standingGuardBreak"],
-            notes: "you are between opponent's legs, which are most likely clamped around behind your back. solid base, elbows in, posture up, head shouldn't go past hands"
+            notes: "you are between opponent's legs, which are most likely clamped around behind your back. Make a solid base, elbows in, posture up, head shouldn't go past hands"
         },
     sideControl : {
             shortName: "sideControl",
             displayName: "Side Control",
             validMoves: ["popUp", "guillotineFromSide", "passToMount", "passToMount2", "papercutterChoke"],
-            notes: "opponent on back, you on top. one arm under head, other hand on hip to control them, or snowball grip."
+            notes: "opponent on their back, you on top. one arm under head, other hand on hip to control them, or snowball grip."
         },
     mounted : {
             shortName: "mounted",

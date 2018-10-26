@@ -23,20 +23,26 @@ var moves = [
         shortName: "kimuraFromMount",
         type: "submission",
         notes: "pinch arm with elbow, grab with other arm. turn upper body to slide grip down to wrist. then other hand comes to grab that wrist. their hand should be pointed to ground. turn your shoulders toward their face. Can also forego your grip on your own wrist and hold on to their elbow to apply pressure.",
-        videoUrl: ["https://www.youtube.com/embed/yfGHPs9MnrQ"]
+        resources: [
+            {type: "video", url: "https://www.youtube.com/embed/yfGHPs9MnrQ"}
+        ]
     },{
         displayName: "Rolling Kimura from Mount (No Gi)",
         shortName: "rollingKimuraFromMount",
         type: "submission",
         notes: "isolate arm out to the side and establish figure 4 lock. use your forearm against his side as a brace at this point. Pop up (time this!) and lock wrist in place with your knee. Opposite side leg posts out, FAR in front of you/over their head. Drop on to your shoulder (same side as the arm you're attacking) to roll. Keep figure 4 grip the whole way! Both legs should bite down on his back. You will end up on your back in kimura position. Bend his arm/elbow toward his face to finish.",
-        videoUrl: ["https://www.youtube.com/embed/g4c5RG4KYlo"]
+        resources: [
+            {type: "video", url: "https://www.youtube.com/embed/g4c5RG4KYlo"}
+            ]
     },{
         displayName: "Scissor Sweep",
         shortName: "scissorSweep",
         type: "positionChange",
         next: "mount",
         notes: "move opponent off balance. deep collar grip, grab sleeve on same side. open guard and make the belt, other leg FLAT on the ground. pull them forward ('check the time'). bring leg out wide and smash it HARD against their legs to complete the sweep. alternate: use both legs in more of a true scissor motion by pulling bottom leg back and pushing top leg forward to topple over your opponent.",
-        videoUrl: ["https://www.youtube.com/embed/UBf7uF5x8GQ"],
+        resources: [
+            {type: "video", url: "https://www.youtube.com/embed/UBf7uF5x8GQ"}
+            ],
         defense: ["post on outside leg and inner arm", "try to keep eyes on opponent"] //https://www.youtube.com/watch?v=mRFVO1DOD5Y
 
     },{
@@ -113,14 +119,18 @@ var moves = [
         shortName: "monoplataFromMount",
         type: "submission",
         notes: "aka shoulder lock. Trap opponent's arm with your elbow (clamp tight to side). Post same side leg, roll opponent to their side. Post other hand on mat (or opponent's face). Sweep posted leg across opponent's face, roll so butt lands on mat. Their arm should be in between your legs. Roll your legs away from their face to put tension on their arm. Can also straighten your legs to provide tension.",
-        videoUrl: ["https://www.youtube.com/embed/zD3sjRk9i5w"],
+        resources: [
+            {type: "video", url: "https://www.youtube.com/embed/zD3sjRk9i5w"}
+            ],
         defense: [""]
     },{
         displayName: "Gogoplata",
         shortName: "gogoplataFromMount",
         type: "submission",
         notes: "Trap opponent's arm with your elbow (clamp tight to side). Post same side leg, roll opponent to their side. With leg posted and opponent's arm trapped, post forward on arm (same side as trapped arm). with other hand, grab posted leg and drag across opponent neck. push weight into neck, can use arms to pull on the back of their head, or grab your toes and pull. If this isn't working, you can transition into monoplata by shifting weight off chest, sink butt to mat, bring other leg up and pinch them together, etc.",
-        videoUrl: ["https://www.youtube.com/embed/MnauxGlVm2g"],
+        resources: [
+            {type: "video", url: "https://www.youtube.com/embed/MnauxGlVm2g"}
+            ],
         defense: [""]
     },{
         displayName: "Collar Drag",
@@ -128,7 +138,9 @@ var moves = [
         type: "positionChange",
         next: "rearMount",
         notes: "grip same side of lapel, bring elbow to the mat and post off other hand, scoot to one side and swing up over opponent's back. remember to get in hooks",
-        videoUrl: ["https://www.youtube.com/embed/Ahtq9FY3Fws"]
+        resources: [
+            {type: "video", url: "https://www.youtube.com/embed/Ahtq9FY3Fws"}
+            ]
     },{
         displayName: "Arm Drag Takedown",
         shortName: "armDragTakedown",
@@ -148,13 +160,19 @@ var moves = [
         shortName: "bowArrowChoke",
         type: "choke",
         notes: "Make sure hooks are in. Get a strong grip on opponent's lapel. Clamp elbow to opponent's shoulder. Press your head against your opponents to keep control. (If on your side, move your head underneath your opponent's.) Free hand grabs for opponent's pants (ideal - underhook leg). Transition leg hooks so your legs point away from the leg you've trapped. Do this one at a time. You want your legs extended a bit. If possible, swing outside leg up and trap opponent's far side arm. Lean toward the trapped leg (not straight back!), pulling with both hands. Don't let elbow bow out, keep angle tight and pull it behind opponent's shoulder blade. Imagine the shape of a bow and arrow. Tip: set up tight grip on lapel",
-        videoUrl: ["https://www.youtube.com/embed/YoX8fNbA9l4", "https://www.youtube.com/embed/H7tTIF6tvDU", "https://www.youtube.com/embed/nS6ALx73epc"]
+        resources: [
+            {type: "video", url: "https://www.youtube.com/embed/YoX8fNbA9l4"},
+            {type: "video", url: "https://www.youtube.com/embed/H7tTIF6tvDU"},
+            {type: "video", url: "https://www.youtube.com/embed/nS6ALx73epc"}
+            ]
     },{
         displayName: "Arm Triangle Choke from Mount",
         shortName: "armTriangleChokeMount",
         type: "choke",
         notes: "scoop arm under opponent's neck, get underhook with your opposite arm and spiderwalk it out and around, sweeping opponent's arm up against the side of their neck. Cup their elbow to trap it deep against their neck, NOT their forehead. Can post your head on the mat to keep it in place, and/or make a gable grip. Press head against their arm to push it into their artery and choke them. Can also transition to side control (don't get caught in half guard) to increase pressure against their neck. Stay on your knees/toes to really drive in pressure",
-        videoUrl: ["https://www.youtube.com/embed/sNEAYcsXuPQ"]
+        resources: [
+            {type: "video", url: "https://www.youtube.com/embed/sNEAYcsXuPQ"}
+            ]
     },{
         displayName: "Pop Up",
         shortName: "popUp",
@@ -173,20 +191,29 @@ var moves = [
         type: "submission",
         notes: "Bottom arm under neck, top arm controlling their far arm. When they start to roll toward you, barely give them the space. Your bottom arm lifts and swoops around their neck, let their head come into your armpit. Grip with other hand. Stay on your knees. Wait until they pop up on their knees. Shift your legs forward, under your hips. Throw leg over their back to keep posture broken, bottom leg goes up into their belly like a belt. At the end, your forearm blade should be against their throat, your hand cupped around their cheek, your thumb out like a hook, other hand clamped down on the meat of your palm to hold everything tight. Should be able to see the back of their neck.",
         videoUrl: ["https://www.youtube.com/embed/z9GxZG3t3bk"],
-        link: [ {url: "https://www.reddit.com/r/bjj/comments/9dzv2i/let_them_escape_side_control_to_trap_them_in_a/", title: "Reddit post"}, {url: "http://www.cnn.com", title: "CNN"} ]
+        link: [ {url: "https://www.reddit.com/r/bjj/comments/9dzv2i/let_them_escape_side_control_to_trap_them_in_a/", title: "Reddit post"} ],
+        resources: [
+            {type: "video", url: "https://www.youtube.com/embed/z9GxZG3t3bk"},
+            {type: "webpage", url: "https://www.reddit.com/r/bjj/comments/9dzv2i/let_them_escape_side_control_to_trap_them_in_a/", title: "Reddit post"}
+        ]
+        
     },{
         displayName: "Arm Bar from Bottom Side Control",
         shortName: "armbarFromBSC",
         type: "submission",
         notes: "Need to be in position with elbows on your chest, palms shielding your face, opponent's arms around you. Hip/bridge out (explosive!), reverse crunch to bring outside leg around his face, the inside leg tucks in between his body and his arm. Top leg bites down hard. Bring your outside arm out to trap his threatened arm with your armpit, other arm holding his shoulder in place. If this move fails, you can go back to guard.",
-        videoUrl: ["https://www.youtube.com/embed/Q3dMhE793g4?start=76"]
+        resources: [
+            {type: "video", url: "https://www.youtube.com/embed/Q3dMhE793g4?start=76"}
+            ]
     },{
         displayName: "Jail Break Escape",
         shortName: "jailbreakEscape",
         type: "positionChange",
         next: "butterfly",
         notes: "Thread inside arm under opponent, same side leg/knee is bent up and pushing against opponent to make some space. Threaded arm grabs OPPOSITE foot, and pulls it through. Frame with the other foot against hip.",
-        videoUrl: ["https://www.youtube.com/embed/thUHGQyYrjc?start=45"]
+        resources: [
+            {type: "video", url: "https://www.youtube.com/embed/thUHGQyYrjc?start=45"}
+            ]
     },{
         displayName: "Defend", // when opp has your back
         shortName: "defendBack",
@@ -199,14 +226,18 @@ var moves = [
         type: "positionChange",
         next: "mount",
         notes: "Shoulder pressure, forearm like a belt across hips, knee replaces arm, far side arm covers opponent's far side arm/shoulder to keep it out of the way, shift hips and throw leg rest of the way over.",
-        videoUrl: ["https://www.youtube.com/embed/Qx9ESxCCy6E"]
+        resources: [
+            {type: "video", url: "https://www.youtube.com/embed/Qx9ESxCCy6E"}
+            ]
     },{
         displayName: "Pass to Mount 2", // from side control
         shortName: "passToMount2",
         type: "positionChange",
         next: "mount",
         notes: "Heavy shoulder pressure, outside arm reaches over and smashes against his legs to drop them toward you, step behind his legs quickly and roll over, use outside arm to block his far side arm/shoulder.",
-        videoUrl: ["https://www.youtube.com/embed/Qx9ESxCCy6E"]
+        resources: [
+            {type: "video", url: "https://www.youtube.com/embed/Qx9ESxCCy6E"}
+            ]
     },{
         displayName: "Triangle Choke",
         shortName: "triangleChokeFromBotHG",
@@ -218,40 +249,76 @@ var moves = [
         type: "positionChange",
         next: "mount",
         notes: "aka 'sinky armpit sweep' Get a strong lapel grip. Shrimp to the side, post off your leg, and sit up explosively. Your arm should cross your body and scoop over your opponent's shoulder, cupping their tricep. Momentum should roll opponent on to their back.",
-        videoUrl: ["https://www.youtube.com/embed/PcEniBDPNMU"]
+        resources: [
+            {type: "video", url: "https://www.youtube.com/embed/PcEniBDPNMU"}
+            ]
     },{
         displayName: "Triangle Choke",
         shortName: "triangleFromSide",
         type: "submission",
-        notes: "Knees spiking into opponent's ribs. Arm under head. Post all your weight on the arm on their chest. Shoulder digging into their armpit to get that near-side arm isolated. Move leg across opponent, and at the same time shift hips to shove leg under opponent and land on your side/back. Close the triangle. Stay calm, work it tighter.",
-        videoUrl: []
+        notes: "Knees spiking into opponent's ribs. Arm under head. Post all your weight on the arm on their chest. Shoulder digging into their armpit to get that near-side arm isolated. Move leg across opponent, and at the same time shift hips to shove leg under opponent and land on your side/back. Close the triangle. Stay calm, work it tighter."
     },{
         displayName: "Leg Trap Mount Escape",
         shortName: "legTrapMountEscape",
         type: "positionChange",
         next: "bottomHalfGuard",
         notes: "Have legs against the floor so opponent can't grapevine. Frame, elbows on the inside. Bridge and shrimp so you're partially on your side (not too far!). Throw your leg over to the opposite side and trap your opponent's leg/shin. Hook his foot and drag it back over your flat leg. Then brace/frame and pull that leg free. Go for the underhook and switch your hips, pulling the first leg free and out. Lock your legs around opponent's to end up in half guard. Tip: if opponent's foot is tucked too close to scape, push your flat-leg knee outward to make his foot an easier target. Also, in the video she even comes to rear mount!",
-        videoUrl: ["https://www.youtube.com/embed/q2OAJF__P2w"]
+        resources: [
+            {type: "video", url: "https://www.youtube.com/embed/q2OAJF__P2w"}
+            ]
     },{
         displayName: "Papercutter/Baseball Bat Choke",
         shortName: "papercutterChoke",
         type: "choke",
         notes: "Start by reversing the position of the hand under opponent's neck, by sweeping your bicep up and onto their throat, so your arm ends up tucked under their neck pointed back at you. Feed your free arm underneath you and up opponent's back, under their arm. Slide hand into their collar and make a tight grip. Draw other arm back to make a grip on opponent's far-side lapel. Think about drawing your pinky to your thumb to make this grip extra tight. With the blade of your forearm over their throat, drop your elbow to the mat. Have as little of your body on their body as possible, except for your arm and whats needed for control. Draw legs back. Turn into a baseball bat choke: Twist to bring head facing your opponent's hips while you move legs around behind their head. This tightens everything up.",
-        videoUrl: ["https://www.youtube.com/embed/iGWWd5erCNE", "https://www.youtube.com/embed/gzQ1a07wnpo", "https://www.youtube.com/embed/6ybjm8Qa_w0"]
+        resources: [
+            {type: "video", url: "https://www.youtube.com/embed/iGWWd5erCNE"},
+            {type: "video", url: "https://www.youtube.com/embed/gzQ1a07wnpo"},
+            {type: "video", url: "https://www.youtube.com/embed/6ybjm8Qa_w0"}
+            ]
     },{
         displayName: "Baseball Bat Choke from Bottom",
         shortName: "baseballBatChokeFromBottom",
         type: "choke",
         notes: "Need a grip on either side of the opponent's lapel (not cross body - yet). You want one palm up, one down. You'll be spinning on your back, legs moving away from the side where your palm is down. Spin your body 180 degrees so your head is underneath your opponent's. Scissor arms and pull them down to the mat. Alternate - reverse palm direction. Bring elbows down til they touch. Then, instead of spinning on back, roll the opposite direction on to your belly.",
-        videoUrl: ["https://www.youtube.com/embed/1Blk548X1Eg", "https://www.youtube.com/embed/oO0Jr6ijuWc"]
+        resources: [
+            {type: "video", url: "https://www.youtube.com/embed/1Blk548X1Eg"},
+            {type: "video", url: "https://www.youtube.com/embed/oO0Jr6ijuWc"}
+            ]
         //defense: ["make a fist at opponent's waist, the other at neck, legs sprawled behind you, press forward on toes out of the choke", "chain into armbar"] note: this defense is more for the bot side control variation but I have this move linked up to bot half guard for the time being til I find a better video.
     },{
         displayName: "Americana",
         shortName: "americanaFromSC",
         type: "submission",
         notes: "Start with your arm under opponent's neck, their arms on their chest. Rock forward to dislodge one of their arms. Remove the arm under their neck and bring it forward to grab their wrist with a monkey grip (not a C grip!) Your other hand threads through for the figure 4 grip. Keep that second arm parallel to your opponent's arm, not at an angle. Tighten; bring your elbows back to you ('fold up the accordian'). Bend your wrists forward like you're revving a motorcycle to roll opponent's palm outward.  Draw their elbow back toward their waist. Bend their elbow up into the air, while keeping their wrist down. Imagine painting the mat with the back of their hand.",
-        videoUrl: ["https://www.youtube.com/embed/Zhh4W24rwrw", "https://www.youtube.com/embed/KpEMF1QOsc4"],
-        defense: ["straighten your arm", "don't let palm roll outward"]
+        defense: ["straighten your arm", "don't let palm roll outward"],
+        resources: [
+            {type: "video", url: "https://www.youtube.com/embed/Zhh4W24rwrw"},
+            {type: "video", url: "https://www.youtube.com/embed/KpEMF1QOsc4"}
+            ]
+    },{
+        displayName: "X Choke",
+        shortName: "xChokeFromGuard",
+        type: "choke",
+        notes: "Pull opponent's elbows out and bring your knees to your chest. Move your head to one side to avoid getting headbutted. Control opponent's head with one hand - turn it to the side for extra effectiveness. Get overhook (over their shoulder) with the other: slide hand between you both up toward their shoulder, angle hips out and punch hand past shoulder, then scoop down and under their arm pit. That same hand should grip their opposite side collar. Free hand comes around to other side of head to hold on to their shoulder and brace forarm blade against opponent's neck. Then drop that elbow to the mat, and flare it open.",
+        resources: [
+            {type: "webpage", url: "https://howtheyplay.com/individual-sports/Closed-Guard-Overhook-Combinations-a-BJJ-Tutorial", title: "Closed Guard Overhook Combinations"},
+            {type: "video", url: "https://www.youtube.com/embed/x7FEU7NwRFc"},
+            ],
+        defense: ["guard collar/throat against setup", "grab elbow and push it back in/prevent it from flaring out"],
+        addChain: ["triangleSetupFromOverhookGuard"]
+    },{
+        displayName: "Triangle Setup from Overhook",
+        shortName: "triangleSetupFromOverhookGuard",
+        type: "positionModifier",
+        notes: "With overhook in place, use your free hand to control opponent's other arm. Pin to their chest/side. Shift hips to point at your overhook side. Your leg comes out and over the arm you have pinned to setup the triangle.",
+        resources: [
+            {type: "webpage", url: "https://howtheyplay.com/individual-sports/Closed-Guard-Overhook-Combinations-a-BJJ-Tutorial", title: "Closed Guard Overhook Combinations"},
+            {type: "video", url: "https://www.youtube.com/embed/FGPazXbdsLA"},
+            {type: "video", url: "https://www.youtube.com/embed/5gW16WmIVjs"},
+            ],
+        defense: []
+        // todo some way of highlighting relationship to triangle.
     }
 
 
@@ -267,15 +334,17 @@ var moves = [
 },{
         displayName: "NAME",
         shortName: "SHORT NAME",
-        type: "positionChange submission choke",
+        type: "positionChange submission choke positionModifier",
         next: "mount",
         notes: "NOTES",
-        videoUrl: [],
+        resources: [
+            {type: "video", url: "https://www.youtube.com/embed/XYZ"},
+            ],
         defense: []
     }
 
-// FUTURE
 
+// FUTURE
 
 omoplata from mount
 

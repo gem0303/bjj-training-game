@@ -36,13 +36,8 @@ function opponentAttemptMove() {
     var moveName = moveSet[getRandomInt(0,moveSet.length-1)];
         
     // Previous step only got us the move name as a string, we need to dig into our library to match that up to the actual move information. this feels icky :(
-    // todo restructure moves list.js to be like pos list with extra layer of 'names'?
-    moves.forEach(function (move) {
-        if (moveName == move.shortName) {
-            AImove = move;
-        }
-    });
-          
+    AImove = convertMoveNameToObect(moveName);
+
     // update Dom
     $("#attempted_move_opp").text(AImove.displayName);
     updateHistory("Opponent attempts " + AImove.displayName);

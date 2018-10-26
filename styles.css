@@ -33,6 +33,15 @@ h3 {font-size: 1.1em;}
     background-color: #ddd;
 }
 
+#moves_list a.completed {
+    font-style: italic;
+    color: #333;
+}
+
+#moves_list a.completed::after {
+    content: ' - completed';
+}
+
 #wrapper {
     display: flex;
     margin-bottom: 2em;
@@ -75,6 +84,7 @@ h3 {font-size: 1.1em;}
     border-radius: 12px;
     cursor: pointer;
     text-align: center;
+    margin: 5px;
 }
 
 /* Submit Button ----------------------- */
@@ -94,11 +104,15 @@ h3 {font-size: 1.1em;}
     outline: none;
 }
 
-#submit:hover {
+#submit:not(.disabled):hover {
     background: #24b662;
 }
 
-
+#submit.disabled {
+    border: 3px solid #9c9c9c;
+    background: #bbb;
+    cursor: no-drop;
+}
 
 .restart {
     font-style: italic;
@@ -112,13 +126,19 @@ h3 {font-size: 1.1em;}
 }
 
 #bottom_nav {
-    margin: 2em 0;
+    margin: 1em 0;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
-#bottom_nav p, #bottom_nav div {
-    display: inline-block;
-    margin: 0px 0.5em;
+
+#bottom_nav div {
+    display: flex;
+    margin: 10px;
+    align-items: center;
 }
+
 
 /* Footer ----------------------- */
 #footer p {
@@ -195,5 +215,9 @@ h3 {font-size: 1.1em;}
     }
     
     .top_header {margin: 0;}
+    
+    #bottom_nav {
+        justify-content: center;
+    }
     
 }

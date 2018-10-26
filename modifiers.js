@@ -46,5 +46,9 @@ var modifiers = {
                 "time your bridge",
                 "wedge arm against opponent's waist like a belt",
                 "foot propped on opposite knee as shield"
+            ],
+    delarivaGuard : [
+                "make grips on opponent's arms or lapel",
+                "free leg pushing against opponent's far-side thigh or knee"
             ]
 };
