@@ -66,11 +66,14 @@ var moves = [
         next: "rearMount",
         notes: "C grip thumb up on opp wrist. Underhand grip on tricep. Pull diagonally across you. Plant outside foot, hook other over calf. Bring them down to elbow. Hook arm and take back. Arm goes under their armpit and grips opposite hand/wrist. In seatbelt hold."
     },{
-        displayName: "Sweep",
+        displayName: "Upa Escape / Mount Escape",
         shortName: "sweepWhileMounted",
         type: "positionChange",
         next: "inOppGuard",
-        notes: "opponent's hand is on your neck or collar. with your opp hand, monkey grip on wrist. other hand reaches up to cup tricep underhand. on tricep grab side, trap opponent's foot by hooking your ankle over their leg. BRIDGE UP to 12 o clock, then flip over and come to knees fast."
+        notes: "opponent's hand is on your neck or collar. with your opp hand, monkey grip on wrist. other hand reaches up to cup tricep underhand. on tricep grab side, trap opponent's foot by hooking your ankle over their leg. BRIDGE UP to 12 o clock, then flip over and come to knees fast.",
+        resources: [
+            {type: "video", url: "https://www.youtube.com/embed/zD3sjRk9i5w"}
+            ],
     },{
         displayName: "Pull Guard",
         shortName: "pullGuard",
@@ -102,12 +105,12 @@ var moves = [
         type: "choke",
         notes: "sink hand deep into collar cross body, knuckles touching collar bone. can pull on back of neck to break posture more. opposite hand goes under your arm to grip opposite side of collar. DEEP. Lean back, inhale. Engage lats to pull your elbows to ground.",
         defense: ["two-handed grip strip", "bob and weave under arm", "block their free arm"] //https://www.youtube.com/watch?v=rJM7Ou84ZA4
-    },{
+/*    },{
         displayName: "Stand Up",
         shortName: "standUp",
         type: "positionChange",
         next: "standing",
-        notes: "if your opponent does not have you in closed guard, push to feet and back away"
+        notes: "if your opponent does not have you in closed guard, push to feet and back away"*/
     },{
         displayName: "Triangle Choke",
         shortName: "triangleChokeFromGuard",
@@ -248,9 +251,10 @@ var moves = [
         shortName: "situpSweep",
         type: "positionChange",
         next: "mount",
-        notes: "aka 'sinky armpit sweep' Get a strong lapel grip. Shrimp to the side, post off your leg, and sit up explosively. Your arm should cross your body and scoop over your opponent's shoulder, cupping their tricep. Momentum should roll opponent on to their back.",
+        notes: "aka 'stinky armpit sweep' Get a strong lapel grip. Shrimp to the side, post off your leg, and sit up explosively. Your arm should cross your body and scoop over your opponent's shoulder, cupping their tricep. Momentum should roll opponent on to their back.",
         resources: [
-            {type: "video", url: "https://www.youtube.com/embed/PcEniBDPNMU"}
+            {type: "video", url: "https://www.youtube.com/embed/PcEniBDPNMU"},
+            {type: "video", url: "https://www.youtube.com/embed/m6gv-iDarkE"}
             ]
     },{
         displayName: "Triangle Choke",
@@ -262,7 +266,7 @@ var moves = [
         shortName: "legTrapMountEscape",
         type: "positionChange",
         next: "bottomHalfGuard",
-        notes: "Have legs against the floor so opponent can't grapevine. Frame, elbows on the inside. Bridge and shrimp so you're partially on your side (not too far!). Throw your leg over to the opposite side and trap your opponent's leg/shin. Hook his foot and drag it back over your flat leg. Then brace/frame and pull that leg free. Go for the underhook and switch your hips, pulling the first leg free and out. Lock your legs around opponent's to end up in half guard. Tip: if opponent's foot is tucked too close to scape, push your flat-leg knee outward to make his foot an easier target. Also, in the video she even comes to rear mount!",
+        notes: "Have legs against the floor so opponent can't grapevine. Frame, elbows on the inside. Bridge and shrimp so you're partially on your side (not too far!). Throw your leg over to the opposite side and trap your opponent's leg/shin. Hook his foot and drag it back over your flat leg. Then brace/frame and pull that leg free. Go for the underhook and switch your hips, pulling the first leg free and out. Lock your legs around opponent's to end up in half guard. Tip: if opponent's foot is tucked too close to scrape, push your flat-leg knee outward to make his foot an easier target. Also, in the video she even comes to rear mount!",
         resources: [
             {type: "video", url: "https://www.youtube.com/embed/q2OAJF__P2w"}
             ]
@@ -300,7 +304,7 @@ var moves = [
         displayName: "X Choke",
         shortName: "xChokeFromGuard",
         type: "choke",
-        notes: "Pull opponent's elbows out and bring your knees to your chest. Move your head to one side to avoid getting headbutted. Control opponent's head with one hand - turn it to the side for extra effectiveness. Get overhook (over their shoulder) with the other: slide hand between you both up toward their shoulder, angle hips out and punch hand past shoulder, then scoop down and under their arm pit. That same hand should grip their opposite side collar. Free hand comes around to other side of head to hold on to their shoulder and brace forarm blade against opponent's neck. Then drop that elbow to the mat, and flare it open.",
+        notes: "Pull opponent's elbows out and bring your knees to your chest. Move your head to one side to avoid getting headbutted. Control opponent's head with one hand - turn it to the side for extra effectiveness. Get overhook (over their shoulder) with the other: slide hand between you both up toward their shoulder, angle hips out and punch hand past shoulder, then scoop down and under their arm pit. That same hand should grip their opposite side collar. Free hand comes around to other side of head to hold on to their shoulder and brace forearm blade against opponent's neck. Then drop that elbow to the mat, and flare it open.",
         resources: [
             {type: "webpage", url: "https://howtheyplay.com/individual-sports/Closed-Guard-Overhook-Combinations-a-BJJ-Tutorial", title: "Closed Guard Overhook Combinations"},
             {type: "video", url: "https://www.youtube.com/embed/x7FEU7NwRFc"},
@@ -319,6 +323,38 @@ var moves = [
             ],
         defense: []
         // todo some way of highlighting relationship to triangle.
+    },{
+        displayName: "Ball & Chain Sweep",
+        shortName: "ballChainSweep",
+        type: "positionChange",
+        next: ["halfGuard", "sideControl"],
+        notes: "From DLR, make a grip on opponent's far-side sleeve. Use free leg to push on opponent's far-side thigh, so they take a big step back. At the same time, sit up (pull on opponent's sleeve for help) and wrap your free hand around opponent's trapped leg. Let your hooked leg drop to the floor, but keep it active. Transfer the sleeve grip to the other hand. Reach up with free hand and get a grip on opponent's collar. Simultaneously pull collar down, pull his sleeve in between his leg, and push on the far-side leg. Opponent will fall to the ground. Get your hips under you and advance your position.",
+        resources: [
+            {type: "video", url: "https://www.youtube.com/embed/I5ZRVabUcIY"},
+            {type: "webpage", url: "https://bjjfanatics.com/blogs/news/go-to-de-la-riva-sweeps", title: "Go To De La Riva Sweeps"},
+            ],
+        defense: []
+    },{
+        displayName: "Overhead Sweep",
+        shortName: "overheadSweepDLR",
+        type: "positionChange",
+        next: "mount",
+        notes: "From DLR, make a grip on opponent's near-side sleeve. Free hand gets a grip on near-side collar up by their collar bone. (You could also have 2 catpaw grips on sleeves.) Free leg braces against opponent's far-side thigh. As opponent drives forward into you, bring your knees to your chest, and lift your leg up to sweep opponent over your head. He will end up on his back, and you follow into mount.",
+        resources: [
+            {type: "video", url: "https://www.youtube.com/embed/ylXALtSRdxk"},
+            {type: "webpage", url: "https://bjjfanatics.com/blogs/news/go-to-de-la-riva-sweeps", title: "Go To De La Riva Sweeps"},
+            ],
+        defense: []
+    },{
+        displayName: "Seated Sweep",
+        shortName: "seatedSweepDLR",
+        type: "positionChange",
+        next: "sideControl",
+        notes: "This is more of a seated DLR. Start with 2 catpaw grips on the sleeves. Start with 1 foot braced against opponent's thigh. The other leg comes around under/behind opponent's knee, and press/hook into his hip. You might need to drop your elbow to scoot your butt around to get the hook deep enough. From there, use free leg to kick his knee out and simultaneously lean backwards to stretch opponent's body out. Then dump him to his side. Come up and advance to side control. Video covers 2 additional techniques in cases where your opponent postures up to prevent the sweep.",
+        resources: [
+            {type: "video", url: "https://www.youtube.com/embed/R9U6Fbnlv2g"}
+            ],
+        defense: ["posture"]
     }
 
 

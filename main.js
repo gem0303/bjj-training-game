@@ -9,6 +9,8 @@ var currentPosition,
     AImove,
     _AIdefense,
     _AIoffense,
+    AI_offense_percent = 50,
+    AI_defense_percent = 50,
     gameOver = false;
 
 
@@ -89,7 +91,11 @@ function updateGame(who, move) {
             // check what the move type is
             switch(AImove.type) {
                 case "positionChange":
+                    
+                    console.log(typeof AImove.next); // todo: if multiple 'next' options, get one at random
+                    
                     oppPosChange(AImove.next);
+                    
                     break;
                 case "submission":
                 case "choke":
@@ -105,8 +111,8 @@ function updateGame(who, move) {
             var opponentAttacks = getAction("offense");
 
             if (!opponentAttacks) {
-                // opponent does not take action
-                console.log("opp does nothing");
+                // opponent does not take action                
+                switchGameMode("offense");                
                 return
             }
 
@@ -134,7 +140,15 @@ function performMove() {
 
     if (currentMove.type == "positionChange") {
         updateHistory("You " + currentMove.displayName);
-        updatePosition(positions[currentMove.next])
+        
+        // check if the move has choice of 2+ positions to end in
+        if (typeof currentMove.next == "object") { // it's actually an array but JS, who knows.
+            var num = getRandomInt(0, currentMove.next.length-1);           
+            updatePosition(positions[currentMove.next[num]]);
+        } else {
+            updatePosition(positions[currentMove.next])
+        }                    
+
     } else if (currentMove.type == "submission" || currentMove.type == "choke") {
         endRound("win");
     } else if (currentMove.type == "positionModifier") {       
@@ -158,9 +172,7 @@ function playerDefendsAI() {
     updatePosition(currentPosition);
     
     // switch to offense mode
-    var tl = new TimelineMax();
-        tl.to("#defense", 0.1, {opacity: 0, display: "none"})
-        tl.to("#offense", 0.1, {opacity: 1, display: "block"});
+    switchGameMode("offense")
 }
 
 function playerDoesntDefendAI() {
@@ -181,7 +193,8 @@ $button_defend_no.click(function() {
 })
 
 // Random pick
-$button_defend_random.click(function() {    
+$button_defend_random.click(function() {
+    // todo -- currently 50/50, could update to be based on custom ai off/def levels.
     var chance = getRandomInt(0, 1);
     if (chance == 1) {
         playerDefendsAI();
@@ -205,8 +218,7 @@ function updatePosition(playerPos, oppPos) {
     } else {
         opponentPosition = getPositionPair(currentPosition);  
     }
-
-    //opponentPosition = getPositionPair(currentPosition);    
+   
     $opponent_position.text(opponentPosition.displayName);
 
     $("#positionNote").text(playerPos.notes);
@@ -232,8 +244,7 @@ function oppPosChange(oppPos) {
     updateHistory(currentPosition.displayName);
     setupMovesList();
     setupPosModList();
-
-
+    
     // clear out variable when no longer needed
     AImove = null;
     updateGame("AI");
@@ -407,7 +418,6 @@ function endRound(win) {
         showPopup(text, "click ok to restart.")
     }
 
-    //reset();
 }
 
 var quotes = [
@@ -451,9 +461,26 @@ function showNotification(title, text, className) {
 
 }
 
+
+
 /* -------------------------------
         HELPER FUNCTIONS
   ------------------------------- */
+
+var mode_switch_tl = new TimelineMax({paused: true});
+    mode_switch_tl
+        .to("#offense", 0.1, {opacity: 0, display: "none"})
+        .to("#defense", 0.1, {opacity: 1, display: "block"});
+
+function switchGameMode(goto) {    
+    if (goto == "defense") {
+        mode_switch_tl.play();
+    } else {
+        mode_switch_tl.reverse();
+    }
+}
+
+
 function getPositionPair(pos) {
         
     var potential = positionPairs[pos.shortName];
@@ -526,6 +553,8 @@ function clearMoveNotes() {
 
 function reset(position) {
     
+    console.log("reset!");
+    
     currentPosition = null;
     opponentPosition = null;
     currentMove = null;
@@ -539,6 +568,9 @@ function reset(position) {
     resetPosModList();
 
     $("#history").html("<b>History:</b> ")
+    
+    // set game back to offense mode
+    switchGameMode("offense")
 
     // if we've passed through a specific position, start there.
     if (position) {
@@ -589,3 +621,10 @@ function init() {
 }
 
 init();
+
+
+
+
+
+
+

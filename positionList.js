@@ -92,8 +92,8 @@ var positions = {
     delarivaGuard : {
             shortName: "delarivaGuard",
             displayName: "De La Riva Guard",
-            validMoves: [],
-            notes: "Opponent is standing. You're on your back underneath them. Get your butt near their forward foot. Control ankle or pants leg. Hook foot behind their knee and into their thigh from underneath. Opposite foot posted on the other thigh, maybe in the hip/waist area. With free hand, get/maintain a grip on same side arm, far side arm, or lapel."
+            validMoves: ["ballChainSweep", "overheadSweepDLR", "seatedSweepDLR"],
+            notes: "Opponent is standing. You're on your back underneath them. Get your butt near their forward foot. Control ankle or pants leg. Hook foot behind their knee and into their far-side thigh from underneath. Opposite foot posted on the other thigh, maybe in the hip/waist area. With free hand, get/maintain a grip on same side arm, far side arm, or lapel."
         }
 }
 
@@ -107,7 +107,7 @@ var positionPairs = {
     sideControl : ["bottomSideControl"],
     bottomSideControl : ["sideControl", "kneeOnBelly"],
     neutralGround : ["neutralGround", "standing", "turtle"],
-    standing : ["standing", "neutralGround"],
+    standing : ["standing", "neutralGround"], // todo DLR here?
     rearMount : ["rearMounted"],
     rearMounted : ["rearMount"],
     kneeOnBelly : ["bottomSideControl"],
@@ -115,7 +115,7 @@ var positionPairs = {
     bottomHalfGuard : ["halfGuard"],
     butterfly : ["neutralGround"],
     turtle : ["neutralGround"],
-    delarivaGuard : ["standing"]
+    delarivaGuard : ["standing"] // todo - make a "in DLR guard" position instead?
 }
 
 

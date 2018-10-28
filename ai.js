@@ -3,20 +3,25 @@
   --------------------------------------- */
 function getAction(action) {
     
-    // currently just a 50/50 chance using rand function already in this file
-    function getChance() {
-        var chance = getRandomInt(0, 1);
-        if (chance == 1) {
+    function getChance(type) {
+        var chance = getRandomInt(1, 99);
+        
+        //console.log(type, chance, AI_offense_percent, AI_defense_percent);
+        
+        if (type == "o" && chance < AI_offense_percent) {
+            return true
+        } else if (type == "d" && chance < AI_defense_percent) {
             return true
         } else {
-            return false
+            return false;
         }
+
     }
         
     if (action == "offense" && _AIoffense) {
-        return getChance()
+        return getChance("o")
     } else if (action == "defense" && _AIdefense) {
-        return getChance()
+        return getChance("d")
     } else {
         // if AI offense/defense option is not toggled on, always return failure to attack/defend
         return false 
@@ -78,13 +83,8 @@ function opponentAttemptMove() {
         console.log("no defenses available");
     }
     
-    
-    
-    // switch to defense mode
-    var tl = new TimelineMax();
-        tl.to("#offense", 0.1, {opacity: 0, display: "none"})
-        tl.to("#defense", 0.1, {opacity: 1, display: "block"});
-    
+    // switch to defense mode    
+    switchGameMode("defense");    
     
     updateMoveNotes(AImove, true);
     
@@ -94,6 +94,21 @@ function opponentAttemptMove() {
 }
 
 
+
 $("#forceAImove").click(function() {
     opponentAttemptMove()
 })
+
+
+/* -------------------------------
+            AI BEHAVIOR
+  ------------------------------- */
+
+$('#offRange').change( function() {
+    AI_offense_percent = this.value;
+});
+
+$('#defRange').change( function() {
+    AI_defense_percent = this.value;
+});
+

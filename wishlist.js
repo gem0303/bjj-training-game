@@ -43,7 +43,7 @@ prioritized 10/25
 
 // BUGS!
 
-
+-- when the opponent is attempting a move, the AI seems to pick from the wrong set of potential moves. Position changes aren't updating correctly or something. 
 
 
 

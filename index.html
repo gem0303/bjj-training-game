@@ -46,8 +46,7 @@
               <h3>Possible Actions:</h3>               
               <input id="submit_defend_yes" type="button" value="Defend"/>
               <input id="submit_defend_no" type="button" value="Don't Defend"/>
-              <input id="submit_defend_random" type="button" value="Random"/>
-             
+              <input id="submit_defend_random" type="button" value="Random"/>           
               
           </div>
           
@@ -84,8 +83,21 @@
     </div>
     
     <div>
-        <input type="checkbox" id="AIoffense" checked onclick="updateSettings(this)" />Enable AI Offense |
-        <input type="checkbox" id="AIdefense" checked onclick="updateSettings(this)"/>Enable AI Defense | 
+       
+       <div class="ai_wrapper">
+           <input type="checkbox" id="AIoffense" checked onclick="updateSettings(this)" />Enable AI Offense |
+           <div class="slidecontainer">
+              0<input type="range" min="0" max="100" value="50" class="slider" id="offRange">100
+            </div>
+       </div>
+       <div class="ai_wrapper">
+           <input type="checkbox" id="AIdefense" checked onclick="updateSettings(this)"/>Enable AI Defense 
+           <div class="slidecontainer">
+              0<input type="range" min="0" max="100" value="50" class="slider" id="defRange">100
+            </div>
+       </div>
+        
+        
         
     </div>
         
