@@ -48,7 +48,7 @@ function opponentAttemptMove() {
     updateHistory("Opponent attempts " + AImove.displayName);
     
     
-    if (AImove.type == "positionChange") {
+    if (AImove.type == "positionChange" || AImove.type == "sweep") {
         showNotification("WATCH OUT", "Your opponent is executing a move!")    
     } else if (AImove.type == "submission" || AImove.type == "choke") {     
         showNotification("WATCH OUT", "Your opponent is attacking you!") 

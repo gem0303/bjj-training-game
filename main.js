@@ -91,10 +91,18 @@ function updateGame(who, move) {
             // check what the move type is
             switch(AImove.type) {
                 case "positionChange":
+                case "sweep":
                     
-                    console.log(typeof AImove.next); // todo: if multiple 'next' options, get one at random
+                    // check if the move has choice of 2+ positions to end in
+                    if (typeof AImove.next == "object") { // it's actually an array but JS, who knows.
+                        var num = getRandomInt(0, AImove.next.length-1);           
+                        oppPosChange(positions[AImove.next[num]]);
+                    } else {
+                        oppPosChange(positions[AImove.next])
+                    }  
                     
-                    oppPosChange(AImove.next);
+                    //oppPosChange(AImove.next);
+                    // TODO one is passing through the name, the other the actual object -- be careful
                     
                     break;
                 case "submission":
@@ -138,7 +146,7 @@ function performMove() {
     clearMoveNotes();
     resetPosModList();
 
-    if (currentMove.type == "positionChange") {
+    if (currentMove.type == "positionChange" || currentMove.type == "sweep") {
         updateHistory("You " + currentMove.displayName);
         
         // check if the move has choice of 2+ positions to end in
@@ -209,7 +217,14 @@ $button_defend_random.click(function() {
     UPDATE CURRENT GAME POSITIONS
   ------------------------------- */
 // Specifically for when a player completes a move
+// This function expects both parameters as position objects.
 function updatePosition(playerPos, oppPos) {
+    
+    if (playerPos == null || typeof playerPos !== 'object') {console.log("ERROR: 'updatePosition' function expects the player position as an object");}  
+        
+    // oppPos is optional. this doesn't do the null check above - consider reworking this.
+    if ( oppPos !== undefined && typeof oppPos !== 'object') {console.log("ERROR: 'updatePosition' function expects the opponent position as an object");}  
+    
     currentPosition = playerPos;
     $current_position.text(playerPos.displayName);
     
@@ -228,7 +243,11 @@ function updatePosition(playerPos, oppPos) {
 }
 
 // Specifically for when opponent is completing the move
+// This function expects the position as an object.
 function oppPosChange(oppPos) {
+    
+    if (oppPos == null || typeof oppPos !== 'object') {console.log("ERROR: 'updatePosition' function expects the opponent position as an object");}  
+
     clearMoveNotes();
     resetPosModList()
 
@@ -252,7 +271,7 @@ function oppPosChange(oppPos) {
 
 
 /* -------------------------------
-            MOVE LIST
+        PLAYER'S MOVE LIST
   ------------------------------- */
 function setupMovesList() {
     $("#moves_list, #mod_list").empty();
@@ -262,6 +281,9 @@ function setupMovesList() {
         
         // check that the move is valid
         if ($.inArray(move.shortName, currentPosition.validMoves) != -1) {
+            
+            // todo: add a secondary check here to make sure move is valid based on opponent's current position.
+            
             addMove(move);            
         }
 
@@ -368,12 +390,10 @@ function resetPosModList() {
 /* -------------------------------
       UPDATE MOVE NOTES AREA
   ------------------------------- */
-function updateMoveNotes(move, defense) {
+function updateMoveNotes(move) {
     
-    // set up note that appears on click
     clearMoveNotes();
     $("#moveNote").text(move.notes);
-    move.imageUrl ? $("#imageNote").text(move.imageUrl) : $("#imageNote").text("none");
     
     // check if the move has any additional resources
     if (move.resources) {
@@ -397,10 +417,21 @@ function updateMoveNotes(move, defense) {
 
     }
     
+    // check if the move has any possible defenses, and if so list them.
+    if (move.defense && move.defense.length > 0) {
 
-    if (defense) {
-        console.log("appending defense info too");
-        // TODO display information on defending the move
+        var defense_text_list = "";
+        
+        move.defense.forEach(function (defense) {
+            defense_text_list += (defense += ", ");            
+        });
+
+        var defense_text_list = defense_text_list.replace(/,\s$/g, ""); // find last comma in list and remove it.             
+        
+        $("#defenseNote").text(defense_text_list);        
+        
+    } else {
+        $("#defenseNote").text("none");     
     }
 }
 
@@ -423,7 +454,8 @@ function endRound(win) {
 var quotes = [
     "“Success is not final, failure is not fatal: It is the courage to continue that counts.”",
     "“You can't always win, but you can always try.”",
-    "“You can't always be winning. You can always be learning.”"
+    "“You can't always be winning. You can always be learning.”",
+    "“A black belt is just a white belt who never gave up.”"
 ]
 
 
@@ -467,6 +499,7 @@ function showNotification(title, text, className) {
         HELPER FUNCTIONS
   ------------------------------- */
 
+// Switch game modes. Starts in offense.
 var mode_switch_tl = new TimelineMax({paused: true});
     mode_switch_tl
         .to("#offense", 0.1, {opacity: 0, display: "none"})
@@ -546,7 +579,7 @@ function disableMove(target) {
       CLEANUP/RESET FUNCTIONS
   ------------------------------- */
 function clearMoveNotes() {
-    $("#moveNote, #imageNote, #videoNote").empty();
+    $("#moveNote, #imageNote, #videoNote, #defenseNote").empty();
     $("#linkNote a").remove();
 
 }

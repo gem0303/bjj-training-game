@@ -14,7 +14,7 @@ var positions = {
     inOppGuard : {
             shortName: "inOppGuard",
             displayName: "In Opponent's Guard",
-            validMoves: ["passGuard", "standUp", "standingGuardBreak"],
+            validMoves: ["passGuard", "standUp", "standingGuardBreak", "legHugPassfromInGuard"],
             notes: "you are between opponent's legs, which are most likely clamped around behind your back. Make a solid base, elbows in, posture up, head shouldn't go past hands"
         },
     sideControl : {
@@ -32,7 +32,7 @@ var positions = {
     neutralGround : {
             shortName: "neutralGround",
             displayName: "On Ground, Neutral Position",
-            validMoves: ["collarDrag", "pullGuard"],
+            validMoves: ["collarDrag", "pullGuard", "heelPickCombatBase", "passGuard"],
             notes: "crouched, seated, or something in between"
         },
     standing : {
@@ -75,13 +75,13 @@ var positions = {
             shortName: "halfGuard",
             displayName: "Half Guard (Top)",
             validMoves: [""],
-            notes: "You are on your side using your inside leg to hook one of your opponent’s legs and have some sort of underhook with your top arm. There are many minor variations to this position, including having your legs triangled, gripping his gi or his belt, etc"
+            notes: "Opponent is on their back/side underneath you. One of your legs is past their hips, the other is trapped by one of their legs."
         },
     bottomHalfGuard : {
             shortName: "bottomHalfGuard",
             displayName: "Half Guard (Bottom)",
             validMoves: ["triangleChokeFromBotHG", "baseballBatChokeFromBottom"],
-            notes: "Opponent has his leg(s) hooked around one of yours, possibly some kind of arm control."
+            notes: "You are on your back/side using your inside leg to hook one of your opponent’s legs. Ideally have some sort of underhook with your top arm. There are many minor variations to this position, including having your legs triangled, gripping his gi or his belt, etc"
         },
     turtle : {
             shortName: "turtle",

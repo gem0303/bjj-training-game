@@ -8,7 +8,8 @@ var modifiers = {
     inGuard : [
                 "closed guard",
                 "break opponent's posture with legs",
-                "grip sleeves/lapel/collar"
+                "grip sleeves/lapel/collar",
+                "arch back, break their arm balance, pull in with legs"
             ],
     inOppGuard : [
                 "straight spine",

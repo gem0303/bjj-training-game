@@ -15,9 +15,12 @@ var moves = [
         displayName: "Kimura from Guard",
         shortName: "kimuraFromGuard",
         type: "submission",
-        notes: "get opponent off balance, grab their wrist. plant feet on floor, lean up and sweep opposite arm over their shoulder/elbow. Loop underneath their arm and grab your own wrist (figure 4). Lean back, leg up over opponent's back. Pinch elbows to chest. Scoot hip out and turn.",
-        defense: ["turn palm to opponent's chest", "drive your ear to his shoulder"]
-        // https://www.youtube.com/watch?v=2DYXS2feaF8
+        notes: "Get opponent off balance. Grab their wrist, extend and lock arm out, pressing wrist into mat. Open guard, shift weight to hips toward the locked wrist. (Don't just sit straight up.) Sit up to your elbow. Free hand loops around opponent's shoulder to grip your own wrist (figure 4 grip). Also transition the bottom hand to a monkey grip (thumbless). Tuck your elbows and pinch them to your chest. Scoot hips back out and turn toward them. Put your leg up over your opponent's back. Keep turning your body toward them til they tap (go slow).",
+        defense: ["turn palm to opponent's chest", "drive your ear to his shoulder"],
+        resources: [
+            {type: "video", url: "https://www.youtube.com/embed/mVkKOPNGvjA"},
+            {type: "video", url: "https://www.youtube.com/embed/2DYXS2feaF8"}
+        ]
     },{
         displayName: "Kimura from Mount",
         shortName: "kimuraFromMount",
@@ -39,7 +42,7 @@ var moves = [
         shortName: "scissorSweep",
         type: "positionChange",
         next: "mount",
-        notes: "move opponent off balance. deep collar grip, grab sleeve on same side. open guard and make the belt, other leg FLAT on the ground. pull them forward ('check the time'). bring leg out wide and smash it HARD against their legs to complete the sweep. alternate: use both legs in more of a true scissor motion by pulling bottom leg back and pushing top leg forward to topple over your opponent.",
+        notes: "Move opponent off balance. Deep collar grip, grab sleeve on same side. open guard and make the belt, other leg FLAT on the ground. pull them forward ('check the time'). bring leg out wide and smash it HARD against their legs to complete the sweep. alternate: use both legs in more of a true scissor motion by pulling bottom leg back and pushing top leg forward to topple over your opponent. Also try the push sweep, where you push their knee out and away with the bottom leg, rather than blocking it from the outside.",
         resources: [
             {type: "video", url: "https://www.youtube.com/embed/UBf7uF5x8GQ"}
             ],
@@ -49,10 +52,11 @@ var moves = [
         displayName: "Pass Guard",
         shortName: "passGuard",
         type: "positionChange",
-        next: "sideControl",
+        next: ["sideControl", "halfGuard"],
         notes: "placeholder move because passing guard can mean a lot of different things. generally, want to apply pressure to one of opponents legs, get over it, and advance into half guard or side control.",
         defense: ["make and keep grips/stay connected to them", "know when to give up the position", "get on your side if you know side control is imminent"] 
-        // todo: smash pass, other variations
+        // todo: record some actual techniques
+        // todo: this is being used both from in neutral and in guard, may need to split up eventually.
     },{
         displayName: "Shrimp",
         shortName: "shrimp",
@@ -68,11 +72,11 @@ var moves = [
     },{
         displayName: "Upa Escape / Mount Escape",
         shortName: "sweepWhileMounted",
-        type: "positionChange",
+        type: "sweep",
         next: "inOppGuard",
-        notes: "opponent's hand is on your neck or collar. with your opp hand, monkey grip on wrist. other hand reaches up to cup tricep underhand. on tricep grab side, trap opponent's foot by hooking your ankle over their leg. BRIDGE UP to 12 o clock, then flip over and come to knees fast.",
+        notes: "Bridge to throw opponent off balance and force their hands to land on the mat. Get an overhook on one arm. Same-side leg should step over their leg to trap it. Bump/bridge a second time and dump opponent to the side. They'll land on their back and you end up on your knees, in their guard. Immediately posture up. You can also try this sweep if opponent's hand is gripping your neck or collar. Make a monkey grip on their wrist with opposite hand. Same-side hand reaches up to cup tricep. Trap leg, bridge and roll like usual.",
         resources: [
-            {type: "video", url: "https://www.youtube.com/embed/zD3sjRk9i5w"}
+            {type: "video", url: "https://www.youtube.com/embed/Rok32K89DZc"}
             ],
     },{
         displayName: "Pull Guard",
@@ -350,12 +354,30 @@ var moves = [
         shortName: "seatedSweepDLR",
         type: "positionChange",
         next: "sideControl",
-        notes: "This is more of a seated DLR. Start with 2 catpaw grips on the sleeves. Start with 1 foot braced against opponent's thigh. The other leg comes around under/behind opponent's knee, and press/hook into his hip. You might need to drop your elbow to scoot your butt around to get the hook deep enough. From there, use free leg to kick his knee out and simultaneously lean backwards to stretch opponent's body out. Then dump him to his side. Come up and advance to side control. Video covers 2 additional techniques in cases where your opponent postures up to prevent the sweep.",
+        notes: "This is more of a seated DLR. Opponent is crouched with 1 knee up. Start with 2 catpaw grips on the sleeves, and 1 foot braced against opponent's thigh. The other leg comes around under/behind opponent's knee, and press/hook into his hip. You might need to drop your elbow to scoot your butt around to get the hook deep enough. From there, use free leg to kick his knee out and simultaneously lean backwards to stretch opponent's body out. Then dump him to his side. Come up and advance to side control. Video covers 2 additional techniques in cases where your opponent postures up to prevent the sweep.",
         resources: [
             {type: "video", url: "https://www.youtube.com/embed/R9U6Fbnlv2g"}
             ],
         defense: ["posture"]
+    },{
+        displayName: "Leg Hug Pass",
+        shortName: "legHugPassfromInGuard",
+        type: "positionChange",
+        next: "sideControl",
+        notes: "Have to have the right setup from your opponent for this to work. Basically, one of their legs should be up on your shoulder. (Imagine if they have shot for and failed a triangle setup.) Grab the leg and push it over your head to your opposite shoulder. Scoop up their other leg and 'bear hug' both legs together. Now shove their legs down to the mat, effectively causing them to lose all control of their hips, and turn the corner into side control.",
+        defense: ["stiff-arm his head and push it to the side he's trying to pass to", "break grips on pants"]
+    },{
+        displayName: "Heel Pick vs. Combat Base",
+        shortName: "heelPickCombatBase",
+        type: "positionChange",
+        next: "halfGuard",
+        notes: "Opponent needs to be in combat base (one knee up, one knee down). First, if their base is tight (no space between knees) you need to create some space behind the posted leg. Grip fight and get a cross body lapel grip. Pull opponent forward and push on their knee to break their balance/stance. You can also try for a lapel drag where you circle out to the side. Once you have space, get lapel grip if you don't already have it. Your free hand grabs opponent's heel (should be same side). Pull opponent forward to disrupt their balance and generate momentum. Then lift their ankle and push forward. They will sprawl backwards.",
+        resources: [
+            {type: "video", url: "https://www.youtube.com/embed/F2iAO5_NM48"},
+            ],
+        defense: []
     }
+
 
 
 ]
