@@ -13,6 +13,9 @@ var currentPosition,
     AI_defense_percent = 50,
     gameOver = false;
 
+// Create a master list of moves that can be performed.
+var moves = movesSubmissions.concat(movesPositionChanges);
+
 
 // Element Selectors
 var $current_position = $( "#current_position" ),
@@ -252,7 +255,7 @@ function oppPosChange(oppPos) {
     resetPosModList()
 
     // update opponent position
-    opponentPosition = positions[oppPos];
+    opponentPosition = oppPos;
     $opponent_position.text(opponentPosition.displayName);
     
     // update player position
@@ -643,14 +646,25 @@ function updatePosDropdown() {
   ------------------------------- */
 function init() {
     
+    // update based on query string settings
+    updateGameOptions();
+    
     TweenMax.set("#defense, .cover", {opacity: 0, display: "none"})
     
     updateSettings( $("#AIoffense")[0] )
     updateSettings( $("#AIdefense")[0] )
 
     updatePosDropdown();
-    updatePosition(positions["neutralGround"], positions["neutralGround"])
-    //updatePosition(positions[getRandomPosition()]);
+    
+    if (startFromRand) {
+        console.log("rand");
+        updatePosition(positions[getRandomPosition()]);
+        
+    } else {
+        console.log("neutral");
+        updatePosition(positions["neutralGround"], positions["neutralGround"])        
+    }
+    
 }
 
 init();

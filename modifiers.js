@@ -28,7 +28,7 @@ var modifiers = {
                 "frame to create and maintain space"
             ],
     neutralGround : [
-                "make grips"
+                "make grips at sleeve, elbow, collar"
             ],
     standing : [
                 "don't let stance become too wide/narrow"
@@ -47,6 +47,18 @@ var modifiers = {
                 "time your bridge",
                 "wedge arm against opponent's waist like a belt",
                 "foot propped on opposite knee as shield"
+            ],
+    halfGuard : [
+                "drive forward",
+                "apply shoulder pressure to opponent's face",
+                "get arm under opponent's head",
+                "other arm gets underhook",
+                "don't drive forward if opponent has the underhook"
+            ],
+    halfGuardBottom : [
+                "press outside/top arm against opponent's neck",
+                "use outside/top arm to get an underhook",
+                "brace inside/bottom arm against opponent's arm to prevent head control"
             ],
     delarivaGuard : [
                 "make grips on opponent's arms or lapel",

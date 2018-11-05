@@ -6,7 +6,7 @@ function getAction(action) {
     function getChance(type) {
         var chance = getRandomInt(1, 99);
         
-        //console.log(type, chance, AI_offense_percent, AI_defense_percent);
+        console.log(type, chance, AI_offense_percent, AI_defense_percent);
         
         if (type == "o" && chance < AI_offense_percent) {
             return true
@@ -39,9 +39,15 @@ function opponentAttemptMove() {
         
     var moveSet = positions[opponentPosition.shortName].validMoves;
     var moveName = moveSet[getRandomInt(0,moveSet.length-1)];
-        
+  
     // Previous step only got us the move name as a string, we need to dig into our library to match that up to the actual move information. this feels icky :(
     AImove = convertMoveNameToObect(moveName);
+    
+    // check if the AI has no moves to perform (occurs when adding a new position but not adding any moves corresponding w/ it)
+    if (AImove == undefined) {
+        showPopup("Error! No moves available for your opponent to perform.", "Click ok to restart.")
+        return
+    }
 
     // update Dom
     $("#attempted_move_opp").text(AImove.displayName);

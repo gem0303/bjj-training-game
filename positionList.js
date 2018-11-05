@@ -8,7 +8,7 @@ var positions = {
     inGuard : {
             shortName: "inGuard",
             displayName: "In Guard",
-            validMoves: ["armBarFromGuard", "scissorSweep", "kimuraFromGuard", "collarChoke", "triangleChokeFromGuard", "situpSweep", "xChokeFromGuard"],
+            validMoves: ["armBarFromGuard", "scissorSweep", "kimuraFromGuard", "collarChoke", "triangleChokeFromGuard", "situpSweep", "xChokeFromGuard", "armlockFromGuard"],
             notes: "your legs are wrapped around opponent's waist. remember to keep closed guard! try to break posture (hands/arms > grip fighting, legs > break posture) and meanwhile look for opponent's mistakes."
         },
     inOppGuard : {
@@ -75,13 +75,13 @@ var positions = {
             shortName: "halfGuard",
             displayName: "Half Guard (Top)",
             validMoves: [""],
-            notes: "Opponent is on their back/side underneath you. One of your legs is past their hips, the other is trapped by one of their legs."
+            notes: "Opponent is on their back/side underneath you. One of your legs is past their hips, the other is trapped by one of their legs. Try to get arms around and under opponent's head."
         },
-    bottomHalfGuard : {
-            shortName: "bottomHalfGuard",
+    halfGuardBottom : {
+            shortName: "halfGuardBottom",
             displayName: "Half Guard (Bottom)",
-            validMoves: ["triangleChokeFromBotHG", "baseballBatChokeFromBottom"],
-            notes: "You are on your back/side using your inside leg to hook one of your opponent’s legs. Ideally have some sort of underhook with your top arm. There are many minor variations to this position, including having your legs triangled, gripping his gi or his belt, etc"
+            validMoves: ["triangleChokeFromBotHG", "baseballBatChokeFromBottom", "backTakeFromBHG"],
+            notes: "Opponent is on top of you. You are ideally on your side (don't get pushed to your back), using one or both of your legs to hook one of your opponent’s legs. Use arms to brace/frame or get an underhook."
         },
     turtle : {
             shortName: "turtle",
@@ -111,8 +111,8 @@ var positionPairs = {
     rearMount : ["rearMounted"],
     rearMounted : ["rearMount"],
     kneeOnBelly : ["bottomSideControl"],
-    halfGuard : ["bottomHalfGuard"],
-    bottomHalfGuard : ["halfGuard"],
+    halfGuard : ["halfGuardBottom"],
+    halfGuardBottom : ["halfGuard"],
     butterfly : ["neutralGround"],
     turtle : ["neutralGround"],
     delarivaGuard : ["standing"] // todo - make a "in DLR guard" position instead?
