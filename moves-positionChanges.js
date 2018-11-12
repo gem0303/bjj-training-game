@@ -95,7 +95,7 @@ var movesPositionChanges = [
         shortName: "defendBack",
         type: "positionChange",
         next: "inGuard",
-        notes: "Get leg hooks out, break hand grips, turn toward opponent so they don't have your back any longer"
+        notes: "Always try to fall to the -opposite side- of the choking arm (pillow of death). Once there, reach up and get a strong grip on opponent's collar. Hide your chin so they can't finish the choke. Plant your feet and turn INTO your opponent to 'scrape them off' your back. You'll want to get your knees under you so you can drive forward. Use grips on opponent's collar to help pull you forward (like climbing a rope). Advance as far as you can."
     },{
         displayName: "Pass to Mount", // from side control
         shortName: "passToMount",
@@ -201,9 +201,44 @@ var movesPositionChanges = [
         next: "rearMount",
         notes: "get an underhook on opponent and scoot out to take their back",
         defense: ["get a whizzer on the underhook", "push back and extract your arm - then drive back in for your underhook"]
+    },{
+        displayName: "Pass Knee Shield",
+        shortName: "passKneeShield",
+        type: "positionChange",
+        next: "kneeOnBelly",
+        notes: "This technique works if opponent has a knee shield. Establish upper body control (ex: wedge hands in armpits). Stand up so opponent rolls to being flat on their back. Two options from here:<br>A) Roll opponent all the way over to their other side. Drop down on their hips and slide to side control.<br>B) Hold on to both of opponent's knees and slide trapped leg back a step. Bend that leg so your knee points out toward your other leg. (moving you, not your opponent) Quickly circle out the leg and land your foot right by opponent's hip. Advance to knee on belly or side control.",
+        resources: [
+            {type: "video", url: "https://www.youtube.com/embed/rfJjmq0vRUs?start=60"},
+            ],
+        defense: []
+    },{
+        displayName: "Basic Pass",
+        shortName: "passHG",
+        type: "positionChange",
+        next: "sideControl",
+        notes: "Your top arm gets underhook with 4 finger grip inside collar. Use free hand to get control of opponent's other arm. Drive forward with shouder to establish cross face control. Use shoulder pressure and plant your forehead on the mat to make sure opponent's head is turned away from you. Also make sure that opponent's near-side arm/elbow is lifted up off the mat. Your free leg kicks out to establish a wide base. Turn hips out and get them to the floor. Slide trapped leg out to complete the pass. Might need to repeat widening stance/sliding hips pattern a few times. Can also reach back with free leg to help push against opponent's legs to free your trapped leg (don't let opponent catch both legs). Important to maintain upper body pressure, grips and tightness through the entire pass. Note: this doesn't work against knee shield.",
+        resources: [
+            {type: "video", url: "https://www.youtube.com/embed/IWwJKi4ZX8Q?start=20"},
+            ],
+        defense: []
     }
 
-
-
 ]
+
+/*
+TEMPLATE:
+
+    },{
+        displayName: "NAME",
+        shortName: "SHORT NAME",
+        type: "positionChange",
+        next: "mount",
+        notes: "NOTES",
+        resources: [
+            {type: "video", url: "https://www.youtube.com/embed/XYZ"},
+            ],
+        defense: []
+    }
+    
+*/
 

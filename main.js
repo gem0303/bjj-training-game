@@ -229,7 +229,7 @@ function updatePosition(playerPos, oppPos) {
     if ( oppPos !== undefined && typeof oppPos !== 'object') {console.log("ERROR: 'updatePosition' function expects the opponent position as an object");}  
     
     currentPosition = playerPos;
-    $current_position.text(playerPos.displayName);
+    $current_position.text(currentPosition.displayName);
     
     if (oppPos) {
         opponentPosition = oppPos;
@@ -239,8 +239,8 @@ function updatePosition(playerPos, oppPos) {
    
     $opponent_position.text(opponentPosition.displayName);
 
-    $("#positionNote").text(playerPos.notes);
-    updateHistory(playerPos.displayName);
+    $("#positionNote").text(currentPosition.notes);
+    updateHistory(currentPosition.displayName);
     setupMovesList();
     setupPosModList();
 }
@@ -396,7 +396,7 @@ function resetPosModList() {
 function updateMoveNotes(move) {
     
     clearMoveNotes();
-    $("#moveNote").text(move.notes);
+    $("#moveNote").html(move.notes);
     
     // check if the move has any additional resources
     if (move.resources) {
@@ -657,11 +657,8 @@ function init() {
     updatePosDropdown();
     
     if (startFromRand) {
-        console.log("rand");
-        updatePosition(positions[getRandomPosition()]);
-        
+        updatePosition(positions[getRandomPosition()]);        
     } else {
-        console.log("neutral");
         updatePosition(positions["neutralGround"], positions["neutralGround"])        
     }
     

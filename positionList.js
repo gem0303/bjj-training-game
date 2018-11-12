@@ -74,7 +74,7 @@ var positions = {
     halfGuard : {
             shortName: "halfGuard",
             displayName: "Half Guard (Top)",
-            validMoves: [""],
+            validMoves: ["passKneeShield", "passHG"],
             notes: "Opponent is on their back/side underneath you. One of your legs is past their hips, the other is trapped by one of their legs. Try to get arms around and under opponent's head."
         },
     halfGuardBottom : {

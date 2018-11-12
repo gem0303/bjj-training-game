@@ -40,7 +40,7 @@ prioritized 10/25
 
 -- when the opponent is attempting a move, the AI seems to pick from the wrong set of potential moves. Position changes aren't updating correctly or something. 
 
-
+-- occasionally when the player performs a move, an error pops up that AI does not have an available move, even though they should have one.
 
 
 

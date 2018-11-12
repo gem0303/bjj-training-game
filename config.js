@@ -2,8 +2,10 @@
         QUERY PARAMETERS
   ------------------------------- */
 
-var startFromRand = false;
+// example: index.html?d=0
+// example: index.html?startFromRand=true
 
+var startFromRand = false;
 
 /* -----------------------------------------------------
     Check for stuff in the URL
@@ -12,6 +14,8 @@ var startFromRand = false;
 // https://davidwalsh.name/query-string-javascript
 
 var urlParams = new URLSearchParams(window.location.search);
+
+
 
 function updateGameOptions() {
     

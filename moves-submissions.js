@@ -10,7 +10,11 @@ var movesSubmissions = [
         shortName: "armBarFromGuard",
         type: "submission",
         notes: "Underhand grip on opponent's elbow, pull it across their body. You will spin the direction the arm is pointed. Leg on hip to help push. Pole through your belly, spin and get spine turned on opponent. Swing other leg up over opponent's head. PINCH KNEES TOGETHER. DO NOT CROSS FEET. Bite down, monkey hanging in a tree. Move hand to their wrist for better control, their thumb pointed up. Arm bar by lifting hips and keep their arm close to our chest.",
-        defense: ["put head down to block leg", "pinch knees to his hips", "lock arm being attacked against your other bicep", "stack opponent/post knee", "pull elbow free"]
+        defense: ["put head down to block leg", "pinch knees to his hips", "lock arm being attacked against your other bicep", "stack opponent/post knee", "pull elbow free"],
+        resources: [
+            {type: "video", url: "https://www.youtube.com/embed/Nw39chR3g50?start=20"},
+            {type: "video", url: "https://www.youtube.com/embed/M8HweiaHH0g"}
+        ]
     },{
         displayName: "Kimura from Guard",
         shortName: "kimuraFromGuard",
@@ -95,7 +99,8 @@ var movesSubmissions = [
             {type: "video", url: "https://www.youtube.com/embed/YoX8fNbA9l4"},
             {type: "video", url: "https://www.youtube.com/embed/H7tTIF6tvDU"},
             {type: "video", url: "https://www.youtube.com/embed/nS6ALx73epc"}
-            ]
+            ],
+        defense: ["two hand grip on your lapel that's choking you -- push it back to prevent choke", "kick leg up and over to break opp pants grip", "sink head down to the mat"]
     },{
         displayName: "Arm Triangle Choke from Mount",
         shortName: "armTriangleChokeMount",
@@ -108,7 +113,7 @@ var movesSubmissions = [
         displayName: "Arm Bar From KOB",
         shortName: "armbarFromKOB",
         type: "submission",
-        notes: "When you first land in knee in belly, your opponent may push at your knee. Make an underhand C grip on their tricep and pull them TOWARD you, dumping them onto your side. Transition so your body is circling over their head. Circle all the way and twist 180 and sit. You should have their arm isolated in an arm lock. One leg will be across their chest or neck. The other against their side. Pinch knees together tight. Arm clamped tight against your chest. Thumb up. Lean back and do arm bar."
+        notes: "When you first land in knee in belly, your opponent may push at your knee. Make an underhand C grip on their far-side arm/tricep and pull them TOWARD you, dumping them onto your side. Transition so your body is circling over their head. Circle all the way and twist 180 and sit. You should have their arm isolated in an arm lock. One leg will be across their chest or neck. The other against their side. Pinch knees together tight. Arm clamped tight against your chest. Thumb up. Lean back and do arm bar."
         // todo: circle halfway, plant knees on either side of ther body and sit down on their head - options from here?
     },{
         displayName: "Guillotine",

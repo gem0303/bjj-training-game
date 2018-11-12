@@ -28,7 +28,8 @@ var modifiers = {
                 "frame to create and maintain space"
             ],
     neutralGround : [
-                "make grips at sleeve, elbow, collar"
+                "make grips at sleeve, elbow, collar",
+                "make grips on ankles, pants leg, knees"
             ],
     standing : [
                 "don't let stance become too wide/narrow"
@@ -39,7 +40,9 @@ var modifiers = {
     rearMount : [
                 "get hooks in",
                 "don't cross feet when hooked",
-                "strong seatbelt grip"
+                "strong seatbelt grip",
+                "keep chest against opponent's back",
+                "keep chin/face on their shoulder"
             ],
     bottomSideControl : [
                 "elbows and arms tucked in to your chest",
