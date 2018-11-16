@@ -62,9 +62,30 @@ h3 {font-size: 1.1em;}
     background-color: aliceblue;
 }
 
+#video_toggle {
+    width: 26px;
+    height: 26px;
+    display: inline-block;
+    margin-left: 8px;
+    cursor: pointer;
+    background: url(images/icon_expand.png);
+}
+
+#video_toggle.large {
+    background: url(images/icon_collapse.png);
+}
+
 #videoNote iframe {
     margin-right: 10px;
+    width: 350px;
+    height: 197px;
 }
+
+#videoNote.large iframe {
+    width: 450px;
+    height: 297px; 
+}
+
 
 #linkNote p {display: inline-block;}
 

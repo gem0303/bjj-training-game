@@ -102,13 +102,16 @@ var movesSubmissions = [
             ],
         defense: ["two hand grip on your lapel that's choking you -- push it back to prevent choke", "kick leg up and over to break opp pants grip", "sink head down to the mat"]
     },{
-        displayName: "Arm Triangle Choke from Mount",
+        displayName: "Arm Triangle/Head & Arm Choke from Mount",
         shortName: "armTriangleChokeMount",
         type: "choke",
-        notes: "scoop arm under opponent's neck, get underhook with your opposite arm and spiderwalk it out and around, sweeping opponent's arm up against the side of their neck. Cup their elbow to trap it deep against their neck, NOT their forehead. Can post your head on the mat to keep it in place, and/or make a gable grip. Press head against their arm to push it into their artery and choke them. Can also transition to side control (don't get caught in half guard) to increase pressure against their neck. Stay on your knees/toes to really drive in pressure",
+        notes: "Slide an arm under opponent's neck. Get underhook with your opposite arm and spiderwalk it out and around, sweeping opponent's arm up against the side of their neck. With bottom hand, cup their elbow to trap it deep against their neck, NOT their forehead. Options to keep the trapped arm in place: post your head on the mat, make a gable grip (attacking arm is palm down!), or use bottom hand to grab opposite arm bicep and tuck that arm against the back of your head (2nd video). Inside shoulder presses up into opponent's chin. Transition to side control (don't get caught in half guard) to increase pressure. Press your chest into opponent's shoulder and rotate toward them. Stay on your knees/toes to really drive in. Make sure the elbow of choking arm is on the floor.",
         resources: [
-            {type: "video", url: "https://www.youtube.com/embed/sNEAYcsXuPQ"}
-            ]
+            {type: "video", url: "https://www.youtube.com/embed/sNEAYcsXuPQ?start=12"},
+            {type: "video", url: "https://www.youtube.com/embed/2d4vWuDfG-M"},
+            {type: "video", url: "https://www.youtube.com/embed/TCOXwqVePsY?start=15"}
+            ],
+        defense: ["lock arms behind your leg and turn away", "tuck hand of trapped arm down by your ear"]
     },{
         displayName: "Arm Bar From KOB",
         shortName: "armbarFromKOB",
@@ -190,13 +193,40 @@ var movesSubmissions = [
         displayName: "Armlock",
         shortName: "armlockFromGuard",
         type: "submission",
-        notes: "Get an underhook and make a super strong grip on the same-side collar, right underneath their armpit. Bring the opponent's elbow to the floor. Apply pressure against opponent's neck/side of their face to turn them away from the trapped arm. Shrimp out and get on your side. Bring the knee closer to the floor, up into the side of his face. At this point, opponent's arm should be stretched out and your elbow should be positioned over top of/near? theirs. Other leg can post on their hip to help keep control druing al this. Then that leg comes on top of opponent's back, with your knee applying pressure to the 'ditch' of their elbow.",
+        notes: "Get an underhook and make a super strong grip on the same-side collar, right underneath their armpit. Bring the opponent's elbow to the floor. Apply pressure against opponent's neck/side of their face to turn them away from the trapped arm. Shrimp out and get on your side. Bring the knee closer to the floor, up into the side of his face. At this point, opponent's arm should be stretched out and your elbow should be positioned over top of/near? theirs. Other leg can post on their hip to help keep control druing all this. Then that leg comes on top of opponent's back, with your knee applying pressure to the 'ditch' of their elbow.",
         resources: [
             {type: "video", url: "https://www.youtube.com/embed/5ge8pEvetqY"},
             ],
         defense: ["bend arm"],
         //addChain: ["triangleSetupFromOverhookGuard"] // todo add the omoplata and triangle setup here.
+    },{
+        displayName: "Triangle from Blocked Scissor Sweep", // todo -- decide whether to keep this as a submission or change to a position modifier like previous triangle setup?
+        shortName: "triangleSetupFromSS",
+        type: "submission",
+        notes: "You should already have a deep cross body lapel grip and control of that same-side arm with your free hand. You should be on your side with bottom leg out, prepared for the sweep. Your opponent has defended by sitting back too far to effectively sweep them. Place your bottom leg on opponent's hip. Swing your free leg out and around, and drive it in like a wedge between your chest and opponent's arm. Visualize knee driving toward their chest. Drive your leg straight out, pushing opponent's arm back with your shin. Quickly start to switch your hips and bring that leg up over opponent's shoulders/neck to complete the triangle setup.",
+        resources: [
+            {type: "video", url: "https://scontent-ort2-1.cdninstagram.com/vp/30fbf98dc6f9a0034315ce7b553cf4ba/5BF030D7/t50.2886-16/45858370_2213260948914063_4396234455811883008_n.mp4"},
+            ],
+        defense: []
     }
 
 ]
+
+
+/*
+TEMPLATE:
+
+},{
+        displayName: "NAME",
+        shortName: "SHORT NAME",
+        type: "submission choke",
+        notes: "NOTES",
+        resources: [
+            {type: "video", url: "https://www.youtube.com/embed/XYZ"},
+            ],
+        defense: []
+    }
+
+    
+*/
 

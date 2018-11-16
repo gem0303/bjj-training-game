@@ -8,7 +8,8 @@ var movesPositionChanges = [
         resources: [
             {type: "video", url: "https://www.youtube.com/embed/UBf7uF5x8GQ"}
             ],
-        defense: ["post on outside leg and inner arm", "try to keep eyes on opponent"] //https://www.youtube.com/watch?v=mRFVO1DOD5Y
+        defense: ["post on outside leg and inner arm", "try to keep eyes on opponent"], //https://www.youtube.com/watch?v=mRFVO1DOD5Y
+        addChain: ["triangleSetupFromSS"]
 
     },{
         displayName: "Pass Guard",

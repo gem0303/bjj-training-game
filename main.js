@@ -578,6 +578,15 @@ function disableMove(target) {
     });   
 }
 
+// this will toggle the videos between small (defualt) and larger sizes
+
+$("#video_toggle").click(function(){
+    
+    $("#video_toggle, #videoNote").toggleClass("large");
+    
+})
+
+
 /* -------------------------------
       CLEANUP/RESET FUNCTIONS
   ------------------------------- */
