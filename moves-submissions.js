@@ -4,7 +4,10 @@ var movesSubmissions = [
         shortName: "armBarFromMount",
         type: "submission",
         notes: "Trap arm. Bring opposite leg to one knee. Put weight on that foot and hands completely. Sweep other leg around FAST and SIT DOWN. PINCH knees to their torso hard. Keep their arm tight against chest. Lean back. Thumb up. Lift hips to finish.",
-        defense: ["hold on to arm being attacked"]
+        defense: ["link hands together", "push leg over your head", "bridge and push back to roll shoulders over their leg", "turn toward opp, dropping elbow of trapped arm to floor"],
+        resources: [
+            {type: "video", url: "https://www.youtube.com/embed/4Dsk8LI-WO0?start=30"},
+        ]
     },{
         displayName: "Arm Bar From Guard",
         shortName: "armBarFromGuard",
@@ -111,7 +114,7 @@ var movesSubmissions = [
             {type: "video", url: "https://www.youtube.com/embed/2d4vWuDfG-M"},
             {type: "video", url: "https://www.youtube.com/embed/TCOXwqVePsY?start=15"}
             ],
-        defense: ["lock arms behind your leg and turn away", "tuck hand of trapped arm down by your ear"]
+        defense: ["lock arms behind your leg and turn away", "tuck hand of trapped arm down by your ear", "pull elbow of trapped arm back to the mat"]
     },{
         displayName: "Arm Bar From KOB",
         shortName: "armbarFromKOB",

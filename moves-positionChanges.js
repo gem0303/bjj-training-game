@@ -222,6 +222,17 @@ var movesPositionChanges = [
             {type: "video", url: "https://www.youtube.com/embed/IWwJKi4ZX8Q?start=20"},
             ],
         defense: []
+        },{
+        displayName: "John Wayne Sweep",
+        shortName: "johnWayneSweep",
+        type: "positionChange",
+        next: ["mount", "KOB"],
+        notes: "This sweep ideally happens when your opponent is pressing or driving forward. Use their momentum to initiate the sweep. To prepare the setup, get upper body control: either an underhook or trap opponent's underhook. Open your half guard. Your bottom leg partially retracts its hook. Your foot should be down by your opponent's ankle, with your toes actively hooking over them. Your other leg posts on the mat. Use the knee of your bottom leg to move your leg up and over like a lever while you use your other posted leg to generate power, similar to a bridge movement. Keep your upper body connections and follow into mount, knee on belly, or top half guard. You can initiate a knee slice for side control. This move depends on setup and timing, so be patient and study opportunities for the opening.",
+        resources: [
+            {type: "video", url: "https://www.youtube.com/embed/WWputCCGd3g"},
+            {type: "video", url: "https://www.youtube.com/embed/dKlm6xRmpIA?start=7"},
+            ],
+        defense: []
     }
 
 ]

@@ -80,7 +80,7 @@ var positions = {
     halfGuardBottom : {
             shortName: "halfGuardBottom",
             displayName: "Half Guard (Bottom)",
-            validMoves: ["triangleChokeFromBotHG", "baseballBatChokeFromBottom", "backTakeFromBHG"],
+            validMoves: ["triangleChokeFromBotHG", "baseballBatChokeFromBottom", "backTakeFromBHG", "johnWayneSweep"],
             notes: "Opponent is on top of you. You are ideally on your side (don't get pushed to your back), using one or both of your legs to hook one of your opponent’s legs. Use arms to brace/frame or get an underhook."
         },
     turtle : {
