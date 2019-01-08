@@ -9,7 +9,10 @@ var modifiers = {
                 "closed guard",
                 "break opponent's posture with legs",
                 "grip sleeves/lapel/collar",
-                "arch back, break their arm balance, pull in with legs"
+                "push opponent's elbows outward",
+                "get overhook",
+
+
             ],
     inOppGuard : [
                 "straight spine",
@@ -35,7 +38,7 @@ var modifiers = {
                 "don't let stance become too wide/narrow"
             ],
     butterfly : [
-                "stay focused"            
+                "stay focused"
             ],
     rearMount : [
                 "get hooks in",
@@ -49,7 +52,8 @@ var modifiers = {
                 "arm blade against opponent's neck",
                 "time your bridge",
                 "wedge arm against opponent's waist like a belt",
-                "foot propped on opposite knee as shield"
+                "foot propped on opposite knee as shield",
+                "get to your side"
             ],
     halfGuard : [
                 "drive forward",
@@ -58,7 +62,7 @@ var modifiers = {
                 "other arm gets underhook",
                 "don't drive forward if opponent has the underhook"
             ],
-    halfGuardBottom : [
+    bottomHalfGuard : [
                 "press outside/top arm against opponent's neck",
                 "use outside/top arm to get an underhook",
                 "brace inside/bottom arm against opponent's arm to prevent head control"

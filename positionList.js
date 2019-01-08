@@ -7,14 +7,14 @@ var positions = {
         },
     inGuard : {
             shortName: "inGuard",
-            displayName: "In Guard",
+            displayName: "Guard",
             validMoves: ["armBarFromGuard", "scissorSweep", "kimuraFromGuard", "collarChoke", "triangleChokeFromGuard", "situpSweep", "xChokeFromGuard", "armlockFromGuard"],
             notes: "your legs are wrapped around opponent's waist. remember to keep closed guard! try to break posture (hands/arms > grip fighting, legs > break posture) and meanwhile look for opponent's mistakes."
         },
     inOppGuard : {
             shortName: "inOppGuard",
             displayName: "In Opponent's Guard",
-            validMoves: ["passGuard", "standUp", "standingGuardBreak", "legHugPassfromInGuard"],
+            validMoves: ["standUp", "standingGuardBreak", "legHugPassfromInGuard", "standingPass", "kneeCutPass"],
             notes: "you are between opponent's legs, which are most likely clamped around behind your back. Make a solid base, elbows in, posture up, head shouldn't go past hands"
         },
     sideControl : {
@@ -26,13 +26,13 @@ var positions = {
     mounted : {
             shortName: "mounted",
             displayName: "Mounted by Opponent",
-            validMoves: ["shrimp", "sweepWhileMounted", "legTrapMountEscape"],
+            validMoves: ["shrimpFromMount", "bridgingMountEscape", "legTrapMountEscape"],
             notes: "opponent is sitting on your chest. not the best place to be, breathe and stay calm!"
         },
     neutralGround : {
             shortName: "neutralGround",
             displayName: "On Ground, Neutral Position",
-            validMoves: ["collarDrag", "pullGuard", "heelPickCombatBase", "passGuard"],
+            validMoves: ["collarDrag", "pullGuard", "heelPickCombatBase", "standingPass", "kneeCutPass"],
             notes: "crouched, seated, or something in between"
         },
     standing : {
@@ -62,25 +62,25 @@ var positions = {
     bottomSideControl : {
             shortName: "bottomSideControl",
             displayName: "Side Control (Bottom)",
-            validMoves: ["shrimp", "armbarFromBSC", "jailbreakEscape"],
+            validMoves: ["shrimpFromBSC", "armbarFromBSC", "jailbreakEscape"],
             notes: "on your back, opponent laying on your chest"
         },
     kneeOnBelly : {
             shortName: "kneeOnBelly",
             displayName: "Knee on Belly",
-            validMoves: ["armbarFromKOB"],
+            validMoves: ["armbarFromKOB", "toSCfromKOB", "toMountfromKOB"],
             notes: "opponent on back, your knee in their belly/solar plexus"
         },
     halfGuard : {
             shortName: "halfGuard",
             displayName: "Half Guard (Top)",
-            validMoves: ["passKneeShield", "passHG"],
+            validMoves: ["passKneeShield", "passKneeShield2", "passHG", "passHG2"],
             notes: "Opponent is on their back/side underneath you. One of your legs is past their hips, the other is trapped by one of their legs. Try to get arms around and under opponent's head."
         },
-    halfGuardBottom : {
-            shortName: "halfGuardBottom",
+    bottomHalfGuard : {
+            shortName: "bottomHalfGuard",
             displayName: "Half Guard (Bottom)",
-            validMoves: ["triangleChokeFromBotHG", "baseballBatChokeFromBottom", "backTakeFromBHG", "johnWayneSweep"],
+            validMoves: ["triangleChokeFromBotHG", "baseballBatChokeFromBottom", "backTakeFromBHG", "johnWayneSweep", "lapelSweep", "lapelBackTake"],
             notes: "Opponent is on top of you. You are ideally on your side (don't get pushed to your back), using one or both of your legs to hook one of your opponent’s legs. Use arms to brace/frame or get an underhook."
         },
     turtle : {
@@ -107,15 +107,15 @@ var positionPairs = {
     sideControl : ["bottomSideControl"],
     bottomSideControl : ["sideControl", "kneeOnBelly"],
     neutralGround : ["neutralGround", "standing", "turtle"],
-    standing : ["standing", "neutralGround"], // todo DLR here?
+    standing : ["standing", "neutralGround"],
     rearMount : ["rearMounted"],
     rearMounted : ["rearMount"],
     kneeOnBelly : ["bottomSideControl"],
-    halfGuard : ["halfGuardBottom"],
-    halfGuardBottom : ["halfGuard"],
+    halfGuard : ["bottomHalfGuard"],
+    bottomHalfGuard : ["halfGuard"],
     butterfly : ["neutralGround"],
     turtle : ["neutralGround"],
-    delarivaGuard : ["standing"] // todo - make a "in DLR guard" position instead?
+    delarivaGuard : ["standing"] // todo - make a "in DLR guard" position instead? or "in open guard" catch-all?
 }
 
 
@@ -129,5 +129,5 @@ x guard
 various guard positions from the stephen kesting pdf
 
 sidemount
- 
+
 */

@@ -132,7 +132,6 @@ var movesSubmissions = [
             {type: "video", url: "https://www.youtube.com/embed/z9GxZG3t3bk"},
             {type: "webpage", url: "https://www.reddit.com/r/bjj/comments/9dzv2i/let_them_escape_side_control_to_trap_them_in_a/", title: "Reddit post"}
         ]
-        
     },{
         displayName: "Arm Bar from Bottom Side Control",
         shortName: "armbarFromBSC",
@@ -145,7 +144,11 @@ var movesSubmissions = [
         displayName: "Triangle Choke",
         shortName: "triangleChokeFromBotHG",
         type: "choke",
-        notes: "If you are in bottom half guard, usually you'd have your two legs wrapped around one of your opponent's. You should have an underhook or overhook on their arm too. Free your legs. Roll to your side. Top/outside leg comes up to post against hip to control space/distance. Bottom leg can help manage the distance between you and your opponent. Grab opponent's wrist (on the non hooked arm) -- they're likely pushing on your bottom leg. Move their wrist out to the side. Pull out your bottom leg and throw it over opponent's shoulder to get the triangle locked up. If the arm you're attacking is not across your chest (still on same side), then bridge your hips up and pull it over."
+        notes: "On your side in bottom half guard. Wedge your top knee against your opponent's hip. Try to keep feet connected if possible. Get overhook with your outside arm. Free hand should post against opponent's tricep or wrist. Bridge to stretch opponent out and make space. Bottom knee comes out - try to get your foot against their hip, thigh or knee. Now shrimp out/away, using your bottom leg and arm to push against opponent's hip and arm to help. Throw top leg over opponent's back and follow with bottom leg up over their shoulder. Maintain grip on their inside arm to keep them from blocking. (If they trap your leg, lift it off their hip and kick it through to remove their grip.) Proceed with tightening up the choke.",
+        resources: [
+            {type: "video", url: "https://www.youtube.com/embed/Xih-E76YYGo"}
+            ],
+        defense: ["escape the whizzer", "get opponent flat on their back"]
     },{
         displayName: "Triangle Choke",
         shortName: "triangleFromSide",
@@ -196,7 +199,7 @@ var movesSubmissions = [
         displayName: "Armlock",
         shortName: "armlockFromGuard",
         type: "submission",
-        notes: "Get an underhook and make a super strong grip on the same-side collar, right underneath their armpit. Bring the opponent's elbow to the floor. Apply pressure against opponent's neck/side of their face to turn them away from the trapped arm. Shrimp out and get on your side. Bring the knee closer to the floor, up into the side of his face. At this point, opponent's arm should be stretched out and your elbow should be positioned over top of/near? theirs. Other leg can post on their hip to help keep control druing all this. Then that leg comes on top of opponent's back, with your knee applying pressure to the 'ditch' of their elbow.",
+        notes: "Get an underhook and make a super strong grip on the same-side collar, right underneath their armpit. Bring the opponent's elbow to the floor. Apply pressure against opponent's neck/side of their face to turn them away from the trapped arm. Shrimp out and get on your side. Bring the knee closer to the floor, up into the side of his face. At this point, opponent's arm should be stretched out and your elbow should be positioned over top of/near? theirs. Other leg can post on their hip to help keep control during all this. Then that leg comes on top of opponent's back, with your knee applying pressure to the 'ditch' of their elbow.",
         resources: [
             {type: "video", url: "https://www.youtube.com/embed/5ge8pEvetqY"},
             ],
@@ -230,6 +233,6 @@ TEMPLATE:
         defense: []
     }
 
-    
+
 */
 

@@ -12,20 +12,18 @@ var movesPositionChanges = [
         addChain: ["triangleSetupFromSS"]
 
     },{
-        displayName: "Pass Guard",
-        shortName: "passGuard",
+        displayName: "Bridge & Shrimp",
+        shortName: "shrimpFromBSC",
         type: "positionChange",
-        next: ["sideControl", "halfGuard"],
-        notes: "placeholder move because passing guard can mean a lot of different things. generally, want to apply pressure to one of opponents legs, get over it, and advance into half guard or side control.",
-        defense: ["make and keep grips/stay connected to them", "know when to give up the position", "get on your side if you know side control is imminent"] 
-        // todo: record some actual techniques
-        // todo: this is being used both from in neutral and in guard, may need to split up eventually.
+        next: ["inGuard", "bottomHalfGuard"],
+        notes: "Bridge, buck hips upwards, then shrimp out (AWAY) from opponent to create space. Get to your side. Get your knee wedged in between you both. Fight to come back to your guard."
     },{
-        displayName: "Shrimp",
-        shortName: "shrimp",
+        displayName: "Bridge & Shrimp",
+        shortName: "shrimpFromMount",
         type: "positionChange",
-        next: "neutralGround", // todo - update
-        notes: "bridge, buck hips upwards, then swing out (AWAY) from opponent to create space. don't give them your back."
+        next: "bottomHalfGuard",
+        notes: "Bridge, buck hips upwards, then swing out (AWAY) from opponent to create space. Try to get to your side.",
+        defense: ["get to high mount", "stay low to remove space"]
     },{
         displayName: "Arm Drag",
         shortName: "armDrag",
@@ -33,11 +31,11 @@ var movesPositionChanges = [
         next: "rearMount",
         notes: "C grip thumb up on opp wrist. Underhand grip on tricep. Pull diagonally across you. Plant outside foot, hook other over calf. Bring them down to elbow. Hook arm and take back. Arm goes under their armpit and grips opposite hand/wrist. In seatbelt hold."
     },{
-        displayName: "Upa Escape / Mount Escape",
-        shortName: "sweepWhileMounted",
+        displayName: "Bridging Mount Escape",
+        shortName: "bridgingMountEscape",
         type: "sweep",
         next: "inOppGuard",
-        notes: "Bridge to throw opponent off balance and force their hands to land on the mat. Get an overhook on one arm. Same-side leg should step over their leg to trap it. Bump/bridge a second time and dump opponent to the side. They'll land on their back and you end up on your knees, in their guard. Immediately posture up. You can also try this sweep if opponent's hand is gripping your neck or collar. Make a monkey grip on their wrist with opposite hand. Same-side hand reaches up to cup tricep. Trap leg, bridge and roll like usual.",
+        notes: "Bridge to throw opponent off balance and force their hands to land on the mat. Get an overhook on one arm. Same-side leg should step over their leg to trap it. Bump/bridge a second time and dump opponent to the side. They'll land on their back and you end up on your knees, in their guard. Immediately posture up. You can also try this sweep if opponent's hand is gripping your neck or collar. Make a monkey grip on their wrist with opposite hand. Same-side hand reaches up to cup tricep. Trap leg, bridge and roll like usual. Also called Upa Escape?",
         resources: [
             {type: "video", url: "https://www.youtube.com/embed/Rok32K89DZc"}
             ],
@@ -47,13 +45,14 @@ var movesPositionChanges = [
         type: "positionChange",
         next: "inGuard",
         notes: "more notes needed on how to do this. essentially grab opponents arms, get control of one, lift leg up same side and drag/trip them to the floor. watch out for them passing guard on you. tons of ways to do this, this is more of a placeholder move for now. expand on techniques :)"
-/*    },{
-        displayName: "Stand Up",
+    },{
+/* Note: This is disabled because it causes a position mismatch that I haven't figured out yet.
+displayName: "Stand Up",
         shortName: "standUp",
         type: "positionChange",
         next: "standing",
-        notes: "if your opponent does not have you in closed guard, push to feet and back away"*/
-    },{
+        notes: "if your opponent does not have you in closed guard, push to feet and back away"
+    },{*/
         displayName: "Collar Drag",
         shortName: "collarDrag",
         type: "positionChange",
@@ -66,14 +65,14 @@ var movesPositionChanges = [
         displayName: "Arm Drag Takedown",
         shortName: "armDragTakedown",
         type: "positionChange",
-        next: "rearMount", // todo: side control
+        next: ["rearMount", "sideControl"],
         notes: "mirror stance, outside hand grabs wrist, inside hand cups tricep, pull opponent toward you and circle to take back, your inside foot is hooking around theirs", // todo: what to do if you can't circle far enough to back
-        defense: [""]        
+        defense: [""]
     },{
         displayName: "Standing Guard Break",
         shortName: "standingGuardBreak",
         type: "positionChange",
-        next: "sideControl", // todo: half guard
+        next: ["sideControl", "halfGuard"],
         notes: "Catpaw grip on their sleeve, get same side knee up, then the other (tip: swing your hips slightly to the side to make space), stand up FAST and throw hips out to break opponent's legs apart (push with stiff arm against knee if needed). Step over leg so it's trapped between your thighs and drive knee to floor to break through into half guard, or, if possible, drive opponent onto their side and circle around into side mount. (more notes needed here of alternate techniques). you can also circle your opponent once you're standing to dislodge legs and disorient them.",
         defense: [""]
     },{
@@ -95,7 +94,7 @@ var movesPositionChanges = [
         displayName: "Defend", // when opp has your back
         shortName: "defendBack",
         type: "positionChange",
-        next: "inGuard",
+        next: ["inGuard", "bottomHalfGuard", "bottomSideControl"],
         notes: "Always try to fall to the -opposite side- of the choking arm (pillow of death). Once there, reach up and get a strong grip on opponent's collar. Hide your chin so they can't finish the choke. Plant your feet and turn INTO your opponent to 'scrape them off' your back. You'll want to get your knees under you so you can drive forward. Use grips on opponent's collar to help pull you forward (like climbing a rope). Advance as far as you can."
     },{
         displayName: "Pass to Mount", // from side control
@@ -129,7 +128,7 @@ var movesPositionChanges = [
         displayName: "Leg Trap Mount Escape",
         shortName: "legTrapMountEscape",
         type: "positionChange",
-        next: "halfGuardBottom",
+        next: "bottomHalfGuard",
         notes: "Have legs against the floor so opponent can't grapevine. Frame, elbows on the inside. Bridge and shrimp so you're partially on your side (not too far!). Throw your leg over to the opposite side and trap your opponent's leg/shin. Hook his foot and drag it back over your flat leg. Then brace/frame and pull that leg free. Go for the underhook and switch your hips, pulling the first leg free and out. Lock your legs around opponent's to end up in half guard. Tip: if opponent's foot is tucked too close to scrape, push your flat-leg knee outward to make his foot an easier target. Also, in the video she even comes to rear mount!",
         resources: [
             {type: "video", url: "https://www.youtube.com/embed/q2OAJF__P2w"}
@@ -203,7 +202,7 @@ var movesPositionChanges = [
         notes: "get an underhook on opponent and scoot out to take their back",
         defense: ["get a whizzer on the underhook", "push back and extract your arm - then drive back in for your underhook"]
     },{
-        displayName: "Pass Knee Shield",
+        displayName: "Knee Shield Standing Pass",
         shortName: "passKneeShield",
         type: "positionChange",
         next: "kneeOnBelly",
@@ -213,7 +212,17 @@ var movesPositionChanges = [
             ],
         defense: []
     },{
-        displayName: "Basic Pass",
+        displayName: "Knee Shield Alternate Pass",
+        shortName: "passKneeShield2",
+        type: "positionChange",
+        next: "sideControl", // todo you're not entirely there yet, need to control upper body to fully complete the pass. set up as another move?
+        notes: "Top hand gets lapel grip on opponent. Bottom hand holds down their leg. Wedge top elbow in between their thigh and your torso. Push with top arm, while pulling with bottom arm, to lift opponent so they're lying on their back. Quickly turn hip in to pass.",
+        resources: [
+            {type: "video", url: "https://www.youtube.com/embed/WV-XYVXKmf8?start=80"},
+            ],
+        defense: []
+    },{
+        displayName: "Basic Pressure Pass",
         shortName: "passHG",
         type: "positionChange",
         next: "sideControl",
@@ -222,7 +231,13 @@ var movesPositionChanges = [
             {type: "video", url: "https://www.youtube.com/embed/IWwJKi4ZX8Q?start=20"},
             ],
         defense: []
-        },{
+    },{
+        displayName: "Switch Hips Pass",
+        shortName: "passHG2",
+        type: "positionChange",
+        next: "sideControl",
+        notes: "Switch your hips and drop down to the mat by their chest. (For example, if your right leg is trapped, aim your left hip for the ground by their chest.) Your bottom knee (of your free leg) should frame against their hip. Your bottom arm should underhook their head, and ideally grab their shoulder. Use your top arm to grab their pants leg, then lock out your arm. This will create space to pull your trapped leg out. Take an exaggerated back step out. Switch hips back to take side control.",
+    },{
         displayName: "John Wayne Sweep",
         shortName: "johnWayneSweep",
         type: "positionChange",
@@ -233,6 +248,49 @@ var movesPositionChanges = [
             {type: "video", url: "https://www.youtube.com/embed/dKlm6xRmpIA?start=7"},
             ],
         defense: []
+    },{
+        displayName: "Lapel Sweep",
+        shortName: "lapelSweep", // from bottom half guard
+        type: "positionChange",
+        next: "halfGuard",
+        notes: "For the sweep to work, you need to be on your side. You also want to have an underhook on at least one side, preferably both. Have your bottom leg hooked into opponent’s, but not both legs. Fish opponent’s outside lapel out of their belt and throw it across their back (to the same side as the trapped leg). If you don’t have the underhook on that side, punch your arm way out over your head and draw your elbow back in to get the underhook. (Can also bridge and frame to make the space needed to do this.) Grab the gi lapel. (Your other hand may need to grab it and throw it back over again.) Your free hand reaches way down to grab the opponent’s leg that you have trapped. Use your free leg as a counterweight to generate momentum. You will push -toward- that free leg, that’s how you know you’re doing it right. You will push up/over on the leg as you pull on the jacket. Opponent will roll backward – you roll with him because of your 3 points of contact (hand and foot on his leg, hand on his jacket). End up in top half guard.",
+        defense: []
+    },{
+        displayName: "Lapel Back Take",
+        shortName: "lapelBackTake", // from bottom half guard
+        type: "positionChange",
+        next: "rearMount",
+        notes: "Start lying on your side with a same-side underhook. Fish opponent’s far-side lapel out of their belt and throw it across their back (to the same side as the trapped leg). Underhook hand grabs the gi lapel. Then you do something sneaky: reach under your opponent with your free (outside) hand and transfer the lapel grip to that hand. You want to be sort of sideways and underneath opponent at this point. Then explode your arm(s?) outward and use momentum to spin around them so you take their back. Step up and over to get second hook. Can also straighten your bottom leg (that has their leg trapped) to help break their base down and make this easier.",
+        defense: []
+    },{
+        displayName: "Standing Guard Pass",
+        shortName: "standingPass",
+        type: "positionChange",
+        next: "kneeOnBelly",
+        notes: "This assumes you have broken out of your opponent's closed guard. They are on the ground with an open guard (legs in the air/hands and arms at their side but also ready to grab you). Get control of your opponent's legs and push both legs to one side (for this example, I will use the right side). Your right leg will slide across your body to the left, and land right by your opponent's hip. Advance into knee on belly.",
+        defense: ["get connection to opponent", "get on your side if you know side control is imminent"]
+    },{
+        displayName: "Knee Cut/Slice Guard Pass",
+        shortName: "kneeCutPass",
+        type: "positionChange",
+        next: "sideControl",
+        notes: "Push forward until you can land your knee on your opponent's thigh. (Your right knee on your opponent's right thigh, or left knee on their left thigh.) From there, slide that knee to the floor right by your opponent's hip. Focus on getting an underhook with the top arm. Bottom arm grips their same-side arm at the tricep and lifts it up off the mat. (Goal is to prevent them from being able to plant their elbow and drive off of it.) Sink your hips to the floor and slide through for side mount. You may need to push your hips against theirs and be heavy to pass.<br><br>Try to get opponent's upper body twisted away from the leg you have held down (because they're weaker this way). You can do this by: Grab their lapel for control to start, Pull up their inside elbow to prevent frames/bracing, Outside arm gets underhook + body weight and pressure to flatten them out to the side, Shove your head against their chin pushing it to the outside to get cross face",
+        resources: [
+            {type: "video", url: "https://www.youtube.com/embed/FrYVub_l24Q"},
+            ],
+        defense: []
+    },{
+        displayName: "Advance to Mount",
+        shortName: "toMountfromKOB",
+        type: "positionChange",
+        next: "mount",
+        notes: "Bring leg around to far side of opponent to take mount.",
+    },{
+        displayName: "Drop to Side Control",
+        shortName: "toSCfromKOB",
+        type: "positionChange",
+        next: "sideControl",
+        notes: "Slide knee off opponent's belly and back to the ground."
     }
 
 ]
@@ -251,6 +309,6 @@ TEMPLATE:
             ],
         defense: []
     }
-    
+
 */
 
