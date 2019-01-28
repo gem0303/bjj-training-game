@@ -5,7 +5,7 @@ var modifiers = {
                 "chest low",
                 "hook your instep into/under their legs"
             ],
-    inGuard : [
+    closedGuard : [
                 "closed guard",
                 "break opponent's posture with legs",
                 "grip sleeves/lapel/collar",

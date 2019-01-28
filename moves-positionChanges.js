@@ -15,7 +15,7 @@ var movesPositionChanges = [
         displayName: "Bridge & Shrimp",
         shortName: "shrimpFromBSC",
         type: "positionChange",
-        next: ["inGuard", "bottomHalfGuard"],
+        next: ["closedGuard", "bottomHalfGuard"],
         notes: "Bridge, buck hips upwards, then shrimp out (AWAY) from opponent to create space. Get to your side. Get your knee wedged in between you both. Fight to come back to your guard."
     },{
         displayName: "Bridge & Shrimp",
@@ -43,7 +43,7 @@ var movesPositionChanges = [
         displayName: "Pull Guard",
         shortName: "pullGuard",
         type: "positionChange",
-        next: "inGuard",
+        next: "closedGuard",
         notes: "more notes needed on how to do this. essentially grab opponents arms, get control of one, lift leg up same side and drag/trip them to the floor. watch out for them passing guard on you. tons of ways to do this, this is more of a placeholder move for now. expand on techniques :)"
     },{
 /* Note: This is disabled because it causes a position mismatch that I haven't figured out yet.
@@ -94,7 +94,7 @@ displayName: "Stand Up",
         displayName: "Defend", // when opp has your back
         shortName: "defendBack",
         type: "positionChange",
-        next: ["inGuard", "bottomHalfGuard", "bottomSideControl"],
+        next: ["closedGuard", "bottomHalfGuard", "bottomSideControl"],
         notes: "Always try to fall to the -opposite side- of the choking arm (pillow of death). Once there, reach up and get a strong grip on opponent's collar. Hide your chin so they can't finish the choke. Plant your feet and turn INTO your opponent to 'scrape them off' your back. You'll want to get your knees under you so you can drive forward. Use grips on opponent's collar to help pull you forward (like climbing a rope). Advance as far as you can."
     },{
         displayName: "Pass to Mount", // from side control
@@ -291,6 +291,17 @@ displayName: "Stand Up",
         type: "positionChange",
         next: "sideControl",
         notes: "Slide knee off opponent's belly and back to the ground."
+    },{
+        displayName: "Flower Sweep",
+        shortName: "flowerSweep",
+        type: "positionChange",
+        next: "mount",
+        notes: "Get a sleeve grip and pants grip by the knee. You will sweep toward the side with the trapped arm. Open your guard and put that side leg up on opponent's hip. Same side leg as pants leg, kicks up into arm pit while you pull the pants up. Other leg curls behind to chop at his base. This move works best when opponent is starting to lift their butt off their heels -- hit the sweep in that window. Look over your shoulder to help finish the sweep. Also bring his knee to his face to help make him compact and roll better.<br><br>Tip with catpaw sleeve grip: point your knuckles inward and plant elbow on the floor. Prevents opponent from getting their arm back to post.",
+        resources: [
+            {type: "video", url: "https://www.youtube.com/embed/1wLb9mh6l3E"},
+            {type: "video", url: "https://www.youtube.com/embed/vHafyWElIfw"},
+            ],
+        defense: ["free arm and post on it"]
     }
 
 ]

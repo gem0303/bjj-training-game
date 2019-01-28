@@ -5,10 +5,10 @@ var positions = {
             validMoves: ["armBarFromMount", "kimuraFromMount", "monoplataFromMount", "gogoplataFromMount", "armTriangleChokeMount", "rollingKimuraFromMount"],
             notes: "sitting on opponent's chest, as far up as you can get, knees pinched tight"
         },
-    inGuard : {
-            shortName: "inGuard",
-            displayName: "Guard",
-            validMoves: ["armBarFromGuard", "scissorSweep", "kimuraFromGuard", "collarChoke", "triangleChokeFromGuard", "situpSweep", "xChokeFromGuard", "armlockFromGuard"],
+    closedGuard : {
+            shortName: "closedGuard",
+            displayName: "Closed Guard",
+            validMoves: ["armBarFromGuard", "scissorSweep", "kimuraFromGuard", "collarChoke", "triangleChokeFromGuard", "situpSweep", "xChokeFromGuard", "armlockFromGuard", "flowerSweep"],
             notes: "your legs are wrapped around opponent's waist. remember to keep closed guard! try to break posture (hands/arms > grip fighting, legs > break posture) and meanwhile look for opponent's mistakes."
         },
     inOppGuard : {
@@ -102,8 +102,8 @@ var positions = {
 var positionPairs = {
     mount : ["mounted"],
     mounted : ["mount"],
-    inGuard : ["inOppGuard"],
-    inOppGuard : ["inGuard"],
+    closedGuard : ["inOppGuard"],
+    inOppGuard : ["closedGuard"],
     sideControl : ["bottomSideControl"],
     bottomSideControl : ["sideControl", "kneeOnBelly"],
     neutralGround : ["neutralGround", "standing", "turtle"],
