@@ -211,7 +211,7 @@ var movesSubmissions = [
         type: "submission",
         notes: "You should already have a deep cross body lapel grip and control of that same-side arm with your free hand. You should be on your side with bottom leg out, prepared for the sweep. Your opponent has defended by sitting back too far to effectively sweep them. Place your bottom leg on opponent's hip. Swing your free leg out and around, and drive it in like a wedge between your chest and opponent's arm. Visualize knee driving toward their chest. Drive your leg straight out, pushing opponent's arm back with your shin. Quickly start to switch your hips and bring that leg up over opponent's shoulders/neck to complete the triangle setup.",
         resources: [
-            {type: "video", url: "https://scontent-ort2-1.cdninstagram.com/vp/30fbf98dc6f9a0034315ce7b553cf4ba/5BF030D7/t50.2886-16/45858370_2213260948914063_4396234455811883008_n.mp4"},
+            {type: "webpage", url: "https://www.reddit.com/r/bjj/comments/9wp4wr/blocked_scissor_sweep_attempt_to_triangle_old/", title: "Timura BJJ video on reddit"},
             ],
         defense: []
     }

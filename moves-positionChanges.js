@@ -22,7 +22,7 @@ var movesPositionChanges = [
         shortName: "shrimpFromMount",
         type: "positionChange",
         next: "bottomHalfGuard",
-        notes: "Bridge, buck hips upwards, then swing out (AWAY) from opponent to create space. Try to get to your side.",
+        notes: "Bridge, buck hips upwards, then shrimp out (AWAY) from opponent to create space. Try to get to your side.",
         defense: ["get to high mount", "stay low to remove space"]
     },{
         displayName: "Arm Drag",
@@ -296,12 +296,47 @@ displayName: "Stand Up",
         shortName: "flowerSweep",
         type: "positionChange",
         next: "mount",
-        notes: "Get a sleeve grip and pants grip by the knee. You will sweep toward the side with the trapped arm. Open your guard and put that side leg up on opponent's hip. Same side leg as pants leg, kicks up into arm pit while you pull the pants up. Other leg curls behind to chop at his base. This move works best when opponent is starting to lift their butt off their heels -- hit the sweep in that window. Look over your shoulder to help finish the sweep. Also bring his knee to his face to help make him compact and roll better.<br><br>Tip with catpaw sleeve grip: point your knuckles inward and plant elbow on the floor. Prevents opponent from getting their arm back to post.",
+        notes: "Get a sleeve grip and pants grip by the knee. You will sweep toward the side with the sleeve grip. Open your guard. The same-side leg as sleeve grip, can either go on opponent's hip or plant it on the ground behind opponent's leg, knee pointing up. Your other leg kicks up into their arm pit while you pull the pants up. Other leg curls behind to chop at his base. This move works best when opponent is starting to lift their butt off their heels -- hit the sweep in that window. Look over your shoulder to help finish the sweep. Also bring opponent's knee to their face to help make them compact and roll better.<br><br>Tip with catpaw sleeve grip: point your knuckles inward and plant elbow on the floor. Prevents opponent from getting their arm back to post.",
         resources: [
             {type: "video", url: "https://www.youtube.com/embed/1wLb9mh6l3E"},
             {type: "video", url: "https://www.youtube.com/embed/vHafyWElIfw"},
+            {type: "video", url: "https://www.youtube.com/embed/LU7bEi96ink?start=14"},
             ],
         defense: ["free arm and post on it"]
+    },{
+        displayName: "Switch to Open Guard",
+        shortName: "switchToOG",
+        type: "positionChange",
+        next: "openGuard",
+        notes: "From closed guard: Open your guard (uncross your legs) to move to open guard. You will want upper body grips to help control opponent's posture. You can also put your feet against your opponent's hips. It is better to open your guard than let your opponent break open your closed guard."
+    },{
+        displayName: "Tripod Sweep",
+        shortName: "tripodSweep",
+        type: "positionChange",
+        next: ["sideControl", "halfGuard"],
+        notes: "In open guard, start with two legs on opponent's hips. Have at least one upper body grip. Other hand drops to cup opponent's ankle. Your opposite leg drops so your foot is hooked behind their knee. Active feet. Bend leg so it's more parallel to the floor so you can fit the hook in. Then push with your top leg and pull with the bottom (hooked) leg. Opponent will fall backward. Advance to guard pass.",
+        resources: [
+            {type: "video", url: "https://www.youtube.com/embed/1p-2qBPL9tM"},
+            ],
+        defense: []
+    },{
+        displayName: "Pull Opponent Into Closed Guard",
+        shortName: "pullIntoCG",
+        type: "positionChange",
+        next: "closedGuard",
+        notes: "Make sure you have two strong upper body grips, like collar and sleeve or double sleeve. Position your feet on your opponent's hips (toes pointed to the outside). Now, pull with your upper body while you push with your feet. Your opponent will be stretched out and possibly need to come to their knees to keep their balance. Your legs are already in position to take closed guard.",
+        defense: ["break grips"]
+    },{
+        displayName: "Arm Drag",
+        shortName: "armDragCG",
+        type: "positionModifier",
+        notes: "Opponent has strong posture, both hands pressing down on your hips/belt. First get a 2 on 1 sleeve grip. Focus on pulling their arm toward your face, and then punch it cross body. Combine this with a hip bump to help disrupt their posture, plus using legs to pull opponent in. Hip bump can also flatten out your torso and offer less resistance when pulling their arm across.<br><br>Next, your other hand reaches up and over opponent's back to grab their lat muscle. You also want to bring your closed guard up opponent's back so your knees are over your hips — this is where you're strongest. (Don't let them sag down by opponent's butt.) You want their shoulder and arm pressing against your chest so they can't lean back and pull their arm free. Ideally their own weight is holding down that trapped arm. You can release the sleeve grip once you have the arm safely trapped. For future techniques, your free hand should go underneath the trapped arm.<br><br>Tip: As you punch their arm out to the side, keep your same-side hand palm-down. So if you are punching opp's right arm across their body, to YOUR right, your right hand may need to rotate a little to stay on top. Your hand is weaker when it's palm up bc opponent can pull sleeve out easier (which you don't want).",
+        addChain: ["triangleSetupFromArmDragCG"]
+    },{
+        displayName: "Triangle Setup from Arm Drag",
+        shortName: "triangleSetupFromArmDragCG",
+        type: "positionModifier",
+        notes: "Grab opponent's arm (not the trapped one) and push until their bicep fits over your knee. Move your grip down to their wrist. Extend hips to put some pressure against their shoulder and arm. At the same time, pull on their wrist. Hopefully, they will want to pull their hand back in response to you tugging on it. When the timing is right, let go of their hand so their momentum brings it way backward. Lift your leg up and over their shoulder for a triangle setup."
     }
 
 ]

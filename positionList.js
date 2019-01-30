@@ -8,7 +8,7 @@ var positions = {
     closedGuard : {
             shortName: "closedGuard",
             displayName: "Closed Guard",
-            validMoves: ["armBarFromGuard", "scissorSweep", "kimuraFromGuard", "collarChoke", "triangleChokeFromGuard", "situpSweep", "xChokeFromGuard", "armlockFromGuard", "flowerSweep"],
+            validMoves: ["armBarFromGuard", "scissorSweep", "kimuraFromGuard", "collarChoke", "triangleChokeFromGuard", "situpSweep", "xChokeFromGuard", "armlockFromGuard", "flowerSweep", "switchToOG", "armDragCG"],
             notes: "your legs are wrapped around opponent's waist. remember to keep closed guard! try to break posture (hands/arms > grip fighting, legs > break posture) and meanwhile look for opponent's mistakes."
         },
     inOppGuard : {
@@ -89,10 +89,22 @@ var positions = {
             validMoves: [],
             notes: ""
         },
+    openGuard : {
+            shortName: "openGuard",
+            displayName: "Open Guard",
+            validMoves: ["tripodSweep", "pullIntoCG"],
+            notes: "You are on the ground, seated or lying on your back. Try to maintain 4 points of contact with your opponent: feet on hips, legs wrapped around or through their legs, sleeve grips, collar grips, or your hands/arms holding on to their legs. Note that this is a catch-all position for open guards, until I figure out the best way to implement them individually."
+        },
+    inOpenGuard : {
+            shortName: "inOpenGuard",
+            displayName: "In Opponent's Open Guard",
+            validMoves: [],
+            notes: "Your opponent is on the ground and you are standing or crouched over them. They are likely trying to pull you back to the ground or sweep you. Try to break free of their grips. Note that this is a catch-all position for your position vs open guards, until I figure out the best way to implement them individually."
+        },    
     delarivaGuard : {
             shortName: "delarivaGuard",
             displayName: "De La Riva Guard",
-            validMoves: ["ballChainSweep", "overheadSweepDLR", "seatedSweepDLR"],
+            validMoves: ["ballChainSweep", "overheadSweepDLR", "seatedSweepDLR", "switchToOG"],
             notes: "Opponent is standing. You're on your back underneath them. Get your butt near their forward foot. Control ankle or pants leg. Hook foot behind their knee and into their far-side thigh from underneath. Opposite foot posted on the other thigh, maybe in the hip/waist area. With free hand, get/maintain a grip on same side arm, far side arm, or lapel."
         }
 }
@@ -115,7 +127,9 @@ var positionPairs = {
     bottomHalfGuard : ["halfGuard"],
     butterfly : ["neutralGround"],
     turtle : ["neutralGround"],
-    delarivaGuard : ["standing"] // todo - make a "in DLR guard" position instead? or "in open guard" catch-all?
+    openGuard : ["inOpenGuard"],
+    inOpenGuard : ["openGuard"],
+    delarivaGuard : ["inOpenGuard"]
 }
 
 
